@@ -839,9 +839,9 @@
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  /* Add subtle wheel background */
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border: 3px solid rgba(0, 0, 0, 0.05);
+  /* Make wheel container transparent so only spokes/icons are visible */
+  background: transparent;
+  border: none;
 }
 
 .wheel-spokes {
