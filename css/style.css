@@ -22,6 +22,322 @@
     transition: .5s;
 }
 
+/* Force dropdowns to a single vertical column on all screen sizes
+   This override stacks solution/product items into one column and keeps
+   the menu responsive (max-width limited to viewport). */
+.product-menu,
+.solutions-menu {
+  display: grid !important;
+  grid-template-columns: 1fr !important; /* single column */
+  gap: 0.5rem !important; /* tighter spacing */
+  /* increased width per user request: wider on larger screens, still caps to viewport */
+  min-width: min(520px, 90vw) !important;
+  max-width: min(720px, 95vw) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+  padding: 0.5rem !important; /* reduced padding */
+}
+
+/* Make the Product dropdown (project menu) narrower than Solutions */
+.product-menu {
+  /* smaller footprint for the Product menu */
+  min-width: min(320px, 90vw) !important;
+  max-width: min(420px, 95vw) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* ===== RESPONSIVE RIGHT-SIDE HAMBURGER MENU ===== */
+
+/* Modern hamburger button with animated lines */
+.hamburger-menu {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  padding: 6px !important;
+  position: fixed !important;
+  right: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1201 !important;
+  margin: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background-color: #495057;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  background-color: #007bff;
+}
+
+/* Animate hamburger to X when menu is open */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Hide desktop nav on smaller screens */
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none !important;
+  }
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu Panel */
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  border-left: 1px solid rgba(224, 224, 224, 0.6);
+}
+
+.mobile-menu-overlay.active .mobile-menu-panel {
+  transform: translateX(0);
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-logo {
+  height: 32px;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #495057;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}
+
+/* Mobile Menu Navigation */
+.mobile-menu-nav {
+  padding: 1rem 0;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-item {
+  margin: 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+  background: rgba(0, 123, 255, 0.08);
+  color: #007bff;
+  transform: translateX(4px);
+}
+
+/* Mobile Dropdown Functionality */
+.mobile-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: rgba(248, 249, 250, 0.8);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+  max-height: 500px;
+}
+
+.mobile-dropdown-link {
+  display: block;
+  padding: 0.75rem 2.5rem;
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+}
+
+.mobile-dropdown-link:hover {
+  background: rgba(0, 123, 255, 0.05);
+  color: #007bff;
+  transform: translateX(4px);
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(224, 224, 224, 0.5);
+  margin-top: 1rem;
+}
+
+.mobile-get-started-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.mobile-get-started-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .mobile-menu-panel {
+    max-width: 100%;
+    width: 85%;
+  }
+  
+  .hamburger-menu {
+    right: 0.75rem !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .mobile-menu-panel {
+    width: 90%;
+  }
+  
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Desktop nav visibility - show nav links on larger screens */
+@media (min-width: 993px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  
+  .hamburger-menu {
+    display: none !important;
+  }
+  
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+/* Ensure individual items expand full width and keep icon + text layout */
+.solution-item, .product-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important; /* slightly smaller gap between icon and text */
+  width: 100% !important;
+}
+
+
 .btn-square {
     width: 38px;
     height: 38px;
@@ -77,12 +393,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.75rem 2rem; /* consistent height */
+            min-height: 64px; /* fixed height across screens */
             background-color: rgba(255, 255, 255, 0.8);
-              -webkit-backdrop-filter: blur(10px);
-              backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid #e0e0e0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease; /* smooth transitions */
         }
 
         .navbar-left {
@@ -95,34 +413,302 @@
             margin-right: 1rem;
         }
 
+        /* Right side of navbar: takes the remaining space so we can center nav links
+           between the logo (left) and the CTA button (right). */
         .navbar-right {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex: 1 1 auto; /* allow this area to grow */
+            justify-content: flex-end; /* keep CTA pinned to the far right */
+        }
+    /* allow children to shrink inside navbar-right to avoid overflow/overlap */
+    .navbar-right, .nav-links, .nav-item {
+      min-width: 0;
+    }
+
+      /* Mobile: stack elements and make nav links wrap vertically */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 0.75rem 1rem;
+          flex-wrap: nowrap !important; /* force single line layout */
+          gap: 0;
+        }
+
+        .navbar-left {
+          flex: 0 0 auto;
+          width: auto !important; /* prevent full width */
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-right: auto !important; /* push other content to right */
+        }
+
+        .navbar-right {
+          width: auto !important; /* prevent full width */
+          position: static !important; /* allow absolute positioned children */
+          margin: 0 !important; /* remove margin that causes wrapping */
+        }
+
+        .hamburger-menu {
+          display: block; /* Show hamburger on mobile */
         }
 
         .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          justify-content: flex-start;
+          display: none; /* Hidden by default, shown via JS toggle */
+          position: absolute;
+          top: calc(100% + 8px); /* give a small gap below the navbar */
+          left: 0;
+          right: 0;
+          background-color: rgba(255, 255, 255, 0.95);
+          -webkit-backdrop-filter: blur(10px); /* Safari support */
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid #e0e0e0;
+          padding: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
         }
 
-        .nav-item {
+        .nav-links.open {
+          display: flex; /* Show when toggled open */
+        }
+
+        .get-started-btn {
+          margin-left: 0;
+        }
+      }
+        
+      /* Mobile: show only logo and hamburger; make navbar fixed with frosted glass */
+      @media (max-width: 768px) {
+        .navbar {
+          position: fixed; /* keep visually fixed */
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          padding: 0.75rem 1rem; /* consistent with desktop height */
+          min-height: 64px; /* same height as desktop */
+          gap: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: nowrap !important; /* force logo and hamburger on one line */
+          background: rgba(255, 255, 255, 0.55); /* translucent */
+          -webkit-backdrop-filter: blur(8px); /* Safari */
+          backdrop-filter: blur(8px); /* frosted glass */
+          border-bottom: 1px solid rgba(224,224,224,0.6);
+          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+          z-index: 1100;
+        }
+
+        /* Keep logo on the left */
+        .navbar-left {
+          flex: 0 0 auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-right: auto !important; /* push other content to the right */
+        }
+
+        .logo-image {
+          height: 36px;
+        }
+
+        /* Menu area on the right - ensure hamburger stays right */
+        .navbar-right {
+          position: static !important; /* allow absolute positioned children */
+          flex: 0 0 auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 0.5rem;
+          margin: 0 !important; /* reset all margins */
+        }
+
+        /* Show only hamburger on mobile; hide other nav items */
+        .hamburger-menu {
+          display: block !important; /* force display on mobile */
+          background: none;
+          border: none;
+          font-size: 1.4rem;
+          color: #495057;
+          padding: 0.35rem;
+          cursor: pointer;
+        }
+
+        /* Hide full nav and CTA on mobile to leave only logo + hamburger visible */
+        .nav-links,
+        .get-started-btn,
+        .nav-item,
+        .product-menu,
+        .solutions-menu {
+          display: none !important;
+        }
+
+        /* Enhanced mobile dropdown with animations */
+        .nav-links {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-links.open {
+            display: flex !important;
+            position: fixed;
+            top: 64px;
+            right: 8px;
+            left: auto;
+            width: calc(100% - 16px);
+            max-width: min(360px, calc(100vw - 16px));
+            flex-direction: column;
+            align-items: stretch;
+            background: rgba(255,255,255,0.96);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            z-index: 1200;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        /* Enhanced mobile menu items */
+        .nav-links.open .nav-item { 
+            display: block !important;
+            margin-bottom: 0.25rem;
+        }
+        
+        .nav-links.open .nav-link {
+            display: block;
+            padding: 1rem 0.75rem;
+            color: #495057;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            min-height: 44px; /* iOS touch target requirement */
+        }
+        
+        .nav-links.open .nav-link:hover,
+        .nav-links.open .nav-link:focus {
+            background-color: rgba(0, 123, 255, 0.08);
+            color: #007bff;
+            transform: translateX(4px);
+        }
+        
+        /* Add mobile CTA button inside dropdown */
+        .nav-links.open::after {
+            content: '';
+            display: block;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Prevent page content from hiding under fixed navbar */
+        body {
+          padding-top: 64px;
+        }
+      }
+        /* Hamburger menu button: hidden on desktop, visible on mobile */
+        .hamburger-menu {
+            display: none; /* Hidden by default, shown in mobile media query */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #495057;
+            cursor: pointer;
+
+        /* Navbar hamburger: force to the far right edge and vertically center
+           Keep minimal and specific so it overrides prior rules without breaking layout */
+        .navbar {
+          position: relative; /* ensure containing block for absolute positioning */
+        }
+        .hamburger-menu {
+          position: absolute !important;
+          right: 1rem !important; /* align to right edge with small inset */
+          top: 50% !important;
+          transform: translateY(-50%) !important; /* vertical center */
+          z-index: 1201 !important; /* above navbar content */
+          margin: 0 !important; /* reset all margins */
+          padding: 0.5rem !important; /* comfortable hit area */
+        }
+
+        /* On very small screens keep the button slightly inset from the edge */
+        @media (max-width: 420px) {
+          .hamburger-menu {
+            right: 0.5rem !important;
+          }
+        }
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            color: #007bff;
+        }
+
+        /* Nav links container: responsive and flexible */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0 auto;
+            padding: 0;
+            flex: 1 1 auto;
+            justify-content: space-between;
+            align-items: center;
+            gap: clamp(0.5rem, 2vw, 1.5rem); /* responsive gap */
+            max-width: min(720px, 60vw); /* responsive max-width */
+            transition: all 0.3s ease;
+        }
+
+    .nav-item {
             position: relative;
         }
 
+        /* Enhanced nav links with better touch targets and responsiveness */
         .nav-item .nav-link {
             color: #495057;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem); /* responsive font size */
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            padding: 0.5rem 0.75rem; /* better touch targets */
+            border-radius: 6px;
+            position: relative;
         }
 
         .nav-item .nav-link:hover {
             color: #007bff;
+            background-color: rgba(0, 123, 255, 0.05);
+            transform: translateY(-1px);
+        }
+        
+        .nav-item .nav-link:active,
+        .nav-item .nav-link.active {
+            color: #007bff;
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+        
+        /* Focus styles for accessibility */
+        .nav-item .nav-link:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
         }
 
         .dropdown .arrow {
@@ -131,33 +717,63 @@
             color: #adb5bd;
         }
 
-        /* Product and Solutions Dropdown Menu Styling */
+        /* Enhanced dropdown menus with better responsiveness */
         .product-menu,
         .solutions-menu {
             display: none;
             position: absolute;
-            top: calc(100% + 10px); /* Position below the link with some space */
+            top: calc(100% + 10px);
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-            z-index: 10;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* Show dropdown with animation */
+        .product-menu.show,
+        .solutions-menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Specific positioning for each menu */
+        /* Responsive product menu positioning */
         .product-menu {
-            min-width: 250px;
+            min-width: min(280px, 90vw);
+            max-width: 90vw;
             left: 0;
         }
+        
+        @media (max-width: 480px) {
+            .product-menu {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
 
-    .solutions-menu {
-      min-width: 500px;
-      left: 50%;
-      transform: translateX(-50%);
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
+        .solutions-menu {
+            min-width: min(500px, 90vw);
+            max-width: 90vw;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .solutions-menu {
+                grid-template-columns: 1fr;
+                min-width: min(320px, 90vw);
+            }
+        }
 
         /* Common item styling for both menus */
         .product-item,
@@ -176,6 +792,79 @@
         .solution-item:hover {
             background-color: #f8f9fa;
         }
+
+/* Compact vertical product menu (matches attachment) */
+.product-menu {
+  padding: 12px;
+}
+.product-menu .menu-heading h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.product-menu .product-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-radius: 6px;
+}
+.product-menu .product-item .item-icon {
+  width: 22px;
+  height: 22px;
+  filter: grayscale(100%);
+  opacity: 0.9;
+}
+.product-menu .product-item .item-text h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: #212529;
+}
+.product-menu .product-item .item-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Integrations row: keep it compact and add right chevron */
+.product-item.integrations-link {
+  justify-content: space-between;
+  gap: 12px;
+}
+.product-item.integrations-link .item-text {
+  flex: 1 1 auto;
+}
+.product-item.integrations-link .item-arrow {
+  font-size: 18px;
+  color: #6c757d;
+  margin-left: 8px;
+}
+.product-item.integrations-link:hover .item-arrow {
+  color: #007bff;
+}
+
+/* small SVG caret used in navigation: keep a consistent size and alignment */
+.nav-link .arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-link .arrow svg {
+  display: inline-block; /* allow vertical-align to work */
+  width: auto;           /* preserve SVG aspect ratio */
+  height: 10px;         /* consistent caret height */
+  vertical-align: middle;
+}
+.nav-item .nav-link:hover .arrow svg path { fill: #007bff; }
+
+/* For small screens where links stack vertically keep the caret next to the label
+   and avoid being pushed to a new line. */
+@media (max-width: 768px) {
+  .nav-item .nav-link {
+    white-space: normal; /* allow wrapping for long labels if needed on very small screens */
+  }
+}
 
         .item-icon {
             width: 24px;
@@ -198,21 +887,151 @@
             line-height: 1.4;
         }
 
-        .get-started-btn {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
+    .get-started-btn {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      flex: 0 0 auto; /* do not grow or shrink */
+      margin-left: 1rem; /* space between links and CTA */
+      z-index: 1101; /* sit above mobile dropdown */
+    }
 
         .get-started-btn:hover {
             background-color: #343a40;
         }
 
-/*** Navbar End ***/
+    /* Responsive: narrower screens (tablet) - reserve space for CTA and prevent overlap */
+    @media (max-width: 992px) {
+      .navbar {
+        min-height: 64px; /* maintain consistent height */
+        padding: 0.75rem 1.5rem;
+      }
+      
+      .nav-links {
+        max-width: 520px;         /* don't let links grow beyond this */
+        flex: 0 1 520px;          /* flex-basis so it won't expand to push CTA */
+        width: auto;              /* allow the flex rule to control width */
+        margin-right: 1rem;      /* reserve a small gap before the CTA */
+        margin-left: 0;          /* align left within its flex area */
+      }
+      
+      /* Show hamburger on tablet if needed */
+      .hamburger-menu {
+        display: none; /* keep hidden on tablet, only show on mobile */
+      }
+    }
+
+        /* Enhanced tablet responsiveness */
+        @media (min-width: 769px) and (max-width: 992px) {
+            .navbar {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 0.75rem;
+                max-width: 480px;
+            }
+            
+            .nav-item .nav-link {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.6rem;
+            }
+            
+            .get-started-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Small tablet adjustments */
+        @media (min-width: 576px) and (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                max-width: 360px;
+            }
+            
+            .nav-item .nav-link {
+                white-space: normal;
+                padding: 0.3rem 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+    /* Extra spacing for CTA on medium screens */
+    @media (min-width: 576px) and (max-width: 991px) {
+        .get-started-btn {
+            margin-left: 1.5rem;
+        }
+
+        .navbar-right {
+            gap: 0.75rem;
+        }
+    }
+
+        /* Mobile: stack elements and make nav links wrap vertically */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .navbar-left {
+                flex: 0 0 auto;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navbar-right {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+            }
+
+            .hamburger-menu {
+                display: block; /* Show hamburger on mobile */
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                display: none; /* Hidden by default, shown via JS toggle */
+                position: absolute;
+                top: calc(100% + 8px); /* give a small gap below the navbar */
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 255, 255, 0.95);
+                -webkit-backdrop-filter: blur(10px); /* Safari support */
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #e0e0e0;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .nav-links.open {
+                display: flex; /* Show when toggled open */
+            }
+
+            .get-started-btn {
+                margin-left: 0;
+            }
+        }/*** Navbar End ***/
 
 
 
@@ -1002,6 +1821,132 @@
   margin: 0 auto 60px auto;
   flex-direction: column;
   padding: 40px 20px;
+}
+
+/* new integration grid styles */
+.integration-grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+}
+
+.grid-heading {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.integration-grid {
+  display: grid;
+  /* responsive columns: more columns on wide screens, fewer on small screens */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 1100px;
+  align-items: stretch;
+  align-content: start;
+}
+
+.integration-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.integration-card {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+  min-height: 120px; /* keep tiles uniform height */
+}
+
+.integration-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.integration-media {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.integration-media img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.integration-label {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.2;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* allow up to 2 lines */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.integration-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.integration-actions .search-integrations,
+.integration-actions .toggle-partners {
+  border: none;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .integration-media { width: 48px; height: 48px; }
+  .integration-card { min-height: 100px; }
+  .integration-label { font-size: 0.78rem; }
+  .grid-heading { font-size: 1.2rem; }
+}
+
+/* larger screens: increase columns and spacing */
+@media (min-width: 1200px) {
+  .integration-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+  }
+  .integration-media { width: 72px; height: 72px; }
+  .integration-card { min-height: 140px; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .integration-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .integration-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 520px) and (max-width: 767px) {
+  .integration-grid { grid-template-columns: repeat(2, 1fr); }
 }
 /* wheel section end */
 /* About Page Styles */
