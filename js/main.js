@@ -21,7 +21,7 @@
     });
     
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 600, 'easeInOutExpo');
         return false;
     });
 
@@ -141,6 +141,129 @@
         }
     });
 
+    // ===== ENHANCED UX IMPROVEMENTS =====
+    
+    // Navbar scroll effect
+    let lastScroll = 0;
+    $(window).scroll(function() {
+        const currentScroll = $(this).scrollTop();
+        
+        // Add scrolled class for styling
+        if (currentScroll > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // Smooth scroll for anchor links
+    $('a[href^="#"]').on('click', function(e) {
+        const target = $(this.hash);
+        if (target.length) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80
+            }, 800, 'easeInOutExpo');
+        }
+    });
+
+    // Add entrance animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with wow class
+        $('.wow').each(function() {
+            observer.observe(this);
+        });
+    }
+
+    // Form input focus effects
+    $('.form-group input, .form-group textarea').on('focus', function() {
+        $(this).parent().addClass('focused');
+    }).on('blur', function() {
+        if (!$(this).val()) {
+            $(this).parent().removeClass('focused');
+        }
+    });
+
+    // Add ripple effect to buttons
+    $('.btn, .mobile-nav-link, .nav-link').on('click', function(e) {
+        const $button = $(this);
+        const $ripple = $('<span class="ripple"></span>');
+        
+        const diameter = Math.max($button.outerWidth(), $button.outerHeight());
+        const radius = diameter / 2;
+        
+        $ripple.css({
+            width: diameter,
+            height: diameter,
+            left: e.pageX - $button.offset().left - radius,
+            top: e.pageY - $button.offset().top - radius
+        });
+        
+        $button.append($ripple);
+        
+        setTimeout(function() {
+            $ripple.remove();
+        }, 600);
+    });
+
+    // Card hover tilt effect
+    $('.card, .services-item').on('mousemove', function(e) {
+        const $card = $(this);
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        $card.css({
+            transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`
+        });
+    }).on('mouseleave', function() {
+        $(this).css({
+            transform: 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)'
+        });
+    });
+
+    // Loading animation for images
+    $('img').each(function() {
+        // If image is already loaded (cached), add loaded class immediately
+        if (this.complete) {
+            $(this).addClass('loaded');
+        } else {
+            // Otherwise wait for load event
+            $(this).on('load', function() {
+                $(this).addClass('loaded');
+            });
+        }
+    });
+
+    // Parallax effect for hero sections
+    $(window).scroll(function() {
+        const scrolled = $(window).scrollTop();
+        $('.hero-section, .page-header').css({
+            transform: 'translateY(' + (scrolled * 0.5) + 'px)'
+        });
+    });
+
     // Enhanced dropdown menu handling with animations
     function setupDropdownWithAnimation(dropdownSelector, menuSelector, useGrid = false) {
         const dropdown = $(dropdownSelector);
@@ -173,8 +296,9 @@
     }
 
     // Initialize enhanced dropdowns
-    setupDropdownWithAnimation('.product-dropdown', '.product-menu');
-    setupDropdownWithAnimation('.solutions-dropdown', '.solutions-menu', true);
+    // DISABLED: Now using click-only from app.js instead of hover
+    // setupDropdownWithAnimation('.product-dropdown', '.product-menu');
+    // setupDropdownWithAnimation('.solutions-dropdown', '.solutions-menu', true);
 
     // Close mobile menu on window resize
     $(window).resize(function() {

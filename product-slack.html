@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack AI Agent - CodimAi | Intelligent Automation for Slack Workspaces</title>
+    <meta name="description" content="Transform your Slack workspace with CodimAi's intelligent AI agent. Automate workflows, answer questions instantly, and boost team productivity with conversational AI.">
+    <meta name="keywords" content="Slack AI, Slack bot, Slack automation, AI agent for Slack, Slack chatbot, workplace automation">
+    <meta name="author" content="CodimAi Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://codimai.com/product-slack.html">
+    
+    <meta property="og:title" content="Slack AI Agent - CodimAi">
+    <meta property="og:description" content="Intelligent AI agent for Slack workspaces - automate tasks, answer questions, boost productivity.">
+    <meta property="og:image" content="https://codimai.com/img/preview.jpg">
+    <meta property="og:url" content="https://codimai.com/product-slack.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CodimAi Slack AI Agent",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "operatingSystem": "Web-based",
+        "description": "AI-powered agent for Slack workspaces"
+    }
+    </script>
+</head>
+
+<body>
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html"><img src="img/CODIM logo web.png" alt="CodimAi Logo" class="logo-image"></a>
+        </div>
+        
+        <div class="navbar-right">
+            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-links desktop-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item dropdown product-dropdown">
+                    <a href="#" class="nav-link active">Product <span class="arrow">▼</span></a>
+                    <div class="product-menu">
+                        <div class="menu-heading">
+                            <h3>AI Agents for Your Workspace</h3>
+                        </div>
+                        <a href="product-slack.html" class="product-item">
+                            <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="item-icon">
+                            <div class="item-text"><h3>Slack</h3></div>
+                        </a>
+                        <a href="contact.html" class="product-item">
+                            <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Teams" class="item-icon">
+                            <div class="item-text"><h3>Microsoft Teams</h3></div>
+                        </a>
+                        <a href="contact.html" class="product-item">
+                            <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="item-icon">
+                            <div class="item-text"><h3>HubSpot</h3></div>
+                        </a>
+                        <a href="contact.html" class="product-item">
+                            <img src="https://cdn.simpleicons.org/zendesk/03363D" alt="Zendesk" class="item-icon">
+                            <div class="item-text"><h3>Zendesk</h3></div>
+                        </a>
+                        <a href="contact.html" class="product-item">
+                            <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="item-icon">
+                            <div class="item-text"><h3>Discord</h3></div>
+                        </a>
+                        <a href="contact.html" class="product-item integrations-link">
+                            <div class="item-text"><h3>View All Integrations</h3></div>
+                            <span class="item-arrow">›</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown solutions-dropdown">
+                    <a href="#" class="nav-link">Solutions <span class="arrow">▼</span></a>
+                    <div class="solutions-menu">
+                        <a href="solution-support.html" class="solution-item">
+                            <i class="fas fa-headset item-icon"></i>
+                            <div class="item-text">
+                                <h3>Support Team</h3>
+                                <p>AI-powered customer support</p>
+                            </div>
+                        </a>
+                        <a href="solution-sales.html" class="solution-item">
+                            <i class="fas fa-handshake item-icon"></i>
+                            <div class="item-text">
+                                <h3>Sales Team</h3>
+                                <p>Sales enablement & automation</p>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="solution-item">
+                            <i class="fas fa-chart-line item-icon"></i>
+                            <div class="item-text">
+                                <h3>Marketing Team</h3>
+                                <p>Campaign tracking & insights</p>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="solution-item">
+                            <i class="fas fa-users item-icon"></i>
+                            <div class="item-text">
+                                <h3>People Team</h3>
+                                <p>HR automation & onboarding</p>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="solution-item">
+                            <i class="fas fa-calculator item-icon"></i>
+                            <div class="item-text">
+                                <h3>Finance Team</h3>
+                                <p>Expense tracking & reporting</p>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="solution-item">
+                            <i class="fas fa-user-tie item-icon"></i>
+                            <div class="item-text">
+                                <h3>Account Manager</h3>
+                                <p>Client relationship management</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+            </ul>
+            <a href="contact.html" class="get-started-btn">Get Started</a>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="mobile-dropdown">
+                        <a href="#" class="mobile-nav-link dropdown-toggle">Product</a>
+                        <ul class="mobile-submenu">
+                            <li><a href="product-slack.html" class="mobile-nav-link">Slack</a></li>
+                            <li><a href="contact.html" class="mobile-nav-link">Microsoft Teams</a></li>
+                            <li><a href="contact.html" class="mobile-nav-link">HubSpot</a></li>
+                            <li><a href="contact.html" class="mobile-nav-link">Zendesk</a></li>
+                        </ul>
+                    </li>
+                    <li class="mobile-dropdown">
+                        <a href="#" class="mobile-nav-link dropdown-toggle">Solutions</a>
+                        <ul class="mobile-submenu">
+                            <li><a href="solution-support.html" class="mobile-nav-link">Support Team</a></li>
+                            <li><a href="solution-sales.html" class="mobile-nav-link">Sales Team</a></li>
+                            <li><a href="contact.html" class="mobile-nav-link">Marketing Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+                </ul>
+                <a href="contact.html" class="get-started-btn mobile-cta">Get Started</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <style>
+        .hero-slack {
+            padding: 75px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(45deg, #111, #2b0b0e, #111, #333);
+            background-size: 600% 600%;
+            animation: gradientAnimation 20s ease-in-out infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-slack .hero-heading {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-slack .hero-subheading {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scrolling-logos {
+            display: flex;
+            width: fit-content;
+            flex-wrap: nowrap;
+            animation: scroll 60s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        .scrolling-logos:hover {
+            animation-play-state: paused;
+        }
+
+        .scrolling-logos.reverse {
+            animation: scroll-reverse 60s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @keyframes scroll-reverse {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        .logo-badge {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            margin: 0 15px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-badge:hover {
+            transform: scale(1.05);
+            background-color: rgba(74, 21, 75, 0.75);
+            border-color: rgba(74, 21, 75, 1);
+        }
+
+        .logo-badge.icon-badge {
+            padding: 0;
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+        }
+
+        .logo-badge.icon-badge img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .hero-cta-buttons {
+            margin-top: 3rem;
+        }
+
+        .hero-cta-buttons .btn {
+            margin: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-slack {
+                padding: 50px 0;
+            }
+            .logo-badge {
+                padding: 10px 24px;
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+            .logo-badge.icon-badge {
+                width: 50px;
+                height: 50px;
+            }
+            .logo-badge.icon-badge img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+
+    <section class="hero-slack">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h1 class="hero-heading">Empower Your <span class="text-orange-accent">Support Team</span> to Quickly Find Answers with AI</h1>
+                    <p class="hero-subheading">Help support teams find answers on Slack, Discord, and Microsoft Teams, enabling them to assist customers more effectively—no coding needed!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- First Row -->
+        <div class="scrolling-logos">
+            <div class="logo-badge">Slack Integration</div>
+            <div class="logo-badge">Discord Bot</div>
+            <div class="logo-badge">Microsoft Teams</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
+            </div>
+            <div class="logo-badge">HubSpot CRM</div>
+            <div class="logo-badge">Zendesk</div>
+            <div class="logo-badge">Salesforce</div>
+            <div class="logo-badge">Jira</div>
+            <div class="logo-badge">Google Drive</div>
+            <div class="logo-badge">Slack Integration</div>
+            <div class="logo-badge">Discord Bot</div>
+            <div class="logo-badge">Microsoft Teams</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack">
+            </div>
+            <div class="logo-badge">HubSpot CRM</div>
+            <div class="logo-badge">Zendesk</div>
+            <div class="logo-badge">Salesforce</div>
+            <div class="logo-badge">Jira</div>
+            <div class="logo-badge">Google Drive</div>
+        </div>
+
+        <!-- Second Row (Reverse) -->
+        <div class="scrolling-logos reverse">
+            <div class="logo-badge">AI Automation</div>
+            <div class="logo-badge">Smart Responses</div>
+            <div class="logo-badge">Workflow Builder</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Teams">
+            </div>
+            <div class="logo-badge">Knowledge Base</div>
+            <div class="logo-badge">Analytics</div>
+            <div class="logo-badge">24/7 Support</div>
+            <div class="logo-badge">Instant Answers</div>
+            <div class="logo-badge">API Access</div>
+            <div class="logo-badge">AI Automation</div>
+            <div class="logo-badge">Smart Responses</div>
+            <div class="logo-badge">Workflow Builder</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Teams">
+            </div>
+            <div class="logo-badge">Knowledge Base</div>
+            <div class="logo-badge">Analytics</div>
+            <div class="logo-badge">24/7 Support</div>
+            <div class="logo-badge">Instant Answers</div>
+            <div class="logo-badge">API Access</div>
+        </div>
+
+        <!-- Third Row -->
+        <div class="scrolling-logos">
+            <div class="logo-badge">Intercom</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
+            </div>
+            <div class="logo-badge">Confluence</div>
+            <div class="logo-badge">Notion</div>
+            <div class="logo-badge">Asana</div>
+            <div class="logo-badge">Trello</div>
+            <div class="logo-badge">GitHub</div>
+            <div class="logo-badge">GitLab</div>
+            <div class="logo-badge">Dropbox</div>
+            <div class="logo-badge">Intercom</div>
+            <div class="logo-badge icon-badge">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
+            </div>
+            <div class="logo-badge">Confluence</div>
+            <div class="logo-badge">Notion</div>
+            <div class="logo-badge">Asana</div>
+            <div class="logo-badge">Trello</div>
+            <div class="logo-badge">GitHub</div>
+            <div class="logo-badge">GitLab</div>
+            <div class="logo-badge">Dropbox</div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center hero-cta-buttons">
+                    <a href="contact.html" class="btn btn-light btn-lg px-5 py-3">
+                        <i class="fas fa-rocket me-2"></i>Start Free Trial
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg px-5 py-3">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- Features Start -->
+    <div class="container-xxl py-5" id="features">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-3">Key Features</h6>
+                <h1 class="mb-4">Powerful AI Capabilities for Slack</h1>
+                <p class="lead">Everything you need to supercharge your team's productivity in Slack</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-robot fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Instant Answers</h5>
+                        <p class="mb-0">Get immediate answers to questions from your knowledge base, documents, and company data without leaving Slack.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-sync fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Workflow Automation</h5>
+                        <p class="mb-0">Automate repetitive tasks like ticket creation, status updates, meeting scheduling, and report generation.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-brain fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Smart Contextual Understanding</h5>
+                        <p class="mb-0">Advanced NLP understands context, intent, and follows conversation threads for natural interactions.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-plug fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Seamless Integrations</h5>
+                        <p class="mb-0">Connect with 50+ tools including Jira, GitHub, Google Drive, Salesforce, and more for unified workflows.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Enterprise Security</h5>
+                        <p class="mb-0">SOC 2 Type II certified, AES-256 encryption, SSO support, and role-based access control.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item h-100 p-4">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-chart-line fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Analytics & Insights</h5>
+                        <p class="mb-0">Track usage, measure productivity gains, identify knowledge gaps, and optimize team performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+    <!-- Use Cases Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-3">Use Cases</h6>
+                <h1 class="mb-4">How Teams Use CodimAi in Slack</h1>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white rounded p-4 h-100">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-headset fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2">Customer Support</h4>
+                                <p class="text-muted mb-0">Automatically answer common customer questions, route tickets, and provide instant support in dedicated channels.</p>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24/7 automated responses</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Ticket creation & tracking</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Knowledge base integration</li>
+                            <li class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>Escalation to human agents</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white rounded p-4 h-100">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-success rounded-circle p-3 me-3">
+                                <i class="fas fa-users fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2">Employee Onboarding</h4>
+                                <p class="text-muted mb-0">Guide new hires through onboarding, answer HR questions, and automate documentation processes.</p>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Automated onboarding workflows</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>HR policy Q&A</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Task checklists & reminders</li>
+                            <li class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>Document collection automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white rounded p-4 h-100">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-danger rounded-circle p-3 me-3">
+                                <i class="fas fa-code fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2">Developer Productivity</h4>
+                                <p class="text-muted mb-0">Streamline DevOps workflows, automate deployments, monitor systems, and manage incidents directly in Slack.</p>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>CI/CD pipeline notifications</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Code review reminders</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Incident management</li>
+                            <li class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>System health monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="bg-white rounded p-4 h-100">
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-warning rounded-circle p-3 me-3">
+                                <i class="fas fa-handshake fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2">Sales Enablement</h4>
+                                <p class="text-muted mb-0">Provide instant access to sales materials, pricing info, and competitor insights to close deals faster.</p>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Instant product information</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Pricing & quote generation</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>CRM data access</li>
+                            <li class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>Deal status updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Use Cases End -->
+
+    <!-- How Super Agent Works Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h2 class="mb-4">How Super Agent Works</h2>
+                    <p class="lead mb-4">Three simple steps: Add channels, add LLM apps, and connect. Super Agent forwards the message from Slack to LLM apps and then relays the generated answers back to the thread.</p>
+                    
+                    <!-- Placeholder for future image -->
+                    <div class="bg-white rounded shadow-sm p-5 text-center">
+                        <i class="fas fa-image fa-5x text-muted mb-3"></i>
+                        <p class="text-muted mb-0">Video/Image Placeholder<br><small>Demo video will be added here</small></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="ps-lg-4">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white circle-badge-50">
+                                    <span class="fw-bold">1</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Add Channels</h5>
+                                <p class="text-muted mb-0">Select the Slack channels where you want Super Agent to operate and provide intelligent assistance.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white circle-badge-50">
+                                    <span class="fw-bold">2</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Add LLM Apps</h5>
+                                <p class="text-muted mb-0">Connect your preferred Large Language Model applications to power the AI responses.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white circle-badge-50">
+                                    <span class="fw-bold">3</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Connect & Deploy</h5>
+                                <p class="text-muted mb-0">Super Agent seamlessly forwards messages to LLM apps and delivers intelligent answers directly in your Slack threads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How Super Agent Works End -->
+
+    <!-- Boost Your Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="mb-4">Boost Your Team with Super Agent</h2>
+                <p class="lead text-muted">Experience Seamless AI Integration and Unmatched Efficiency</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="text-center bg-light rounded p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 circle-badge-80 mb-4">
+                            <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Lead the Innovation</h5>
+                        <p class="text-muted mb-0">Reduce response time significantly and enhance client satisfaction. Empower your teams to work smarter and deliver results faster.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="text-center bg-light rounded p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 circle-badge-80 mb-4">
+                            <i class="fas fa-robot fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Bring Your AI Ideas for Work to Life</h5>
+                        <p class="text-muted mb-0">Build an AI assistant that seamlessly integrates into your daily workflow in just one day—no engineering support needed.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="text-center bg-light rounded p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 circle-badge-80 mb-4">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Share Your AI with Your Team</h5>
+                        <p class="text-muted mb-0">Get exactly what your team needs with flexible pricing—pay for AI access for the entire team, not per individual member.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Boost Your Team End -->
+
+    <!-- Seamlessness Section Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <!-- Placeholder for future image -->
+                    <div class="bg-white rounded shadow-sm p-5 text-center mb-4 mb-lg-0">
+                        <i class="fab fa-slack fa-5x text-primary mb-3"></i>
+                        <p class="text-muted mb-0">Slack Interface Demo<br><small>Screenshot will be added here</small></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="ps-lg-4">
+                        <h6 class="text-primary text-uppercase mb-3">Seamlessness</h6>
+                        <h2 class="mb-4">AI Where Your Team Already Works</h2>
+                        <p class="lead mb-4">Super Agent's AI assistants operate directly within Slack, Teams, Discord, and other platforms—eliminating the need to switch between tabs or learn new interfaces. Experience faster, more efficient work within the tools your team uses daily.</p>
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4">
+                            <div class="bg-white rounded shadow-sm p-3">
+                                <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="img-icon-32">
+                            </div>
+                            <div class="bg-white rounded shadow-sm p-3">
+                                <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Teams" class="img-icon-32">
+                            </div>
+                            <div class="bg-white rounded shadow-sm p-3">
+                                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="img-icon-32">
+                            </div>
+                            <div class="bg-white rounded shadow-sm p-3">
+                                <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="img-icon-32">
+                            </div>
+                            <div class="bg-white rounded shadow-sm p-3">
+                                <img src="https://cdn.simpleicons.org/zendesk/03363D" alt="Zendesk" class="img-icon-32">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Seamlessness Section End -->
+
+    <!-- Capability Section Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 wow fadeInRight" data-wow-delay="0.1s">
+                    <!-- Placeholder for future image -->
+                    <div class="bg-light rounded shadow-sm p-5 text-center mb-4 mb-lg-0">
+                        <i class="fas fa-puzzle-piece fa-5x text-success mb-3"></i>
+                        <p class="text-muted mb-0">Integration Dashboard<br><small>Interface screenshot will be added here</small></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-lg-1 wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="pe-lg-4">
+                        <h6 class="text-success text-uppercase mb-3">Capability</h6>
+                        <h2 class="mb-4">AI Learns and Acts Like Your Team</h2>
+                        <p class="lead mb-4">These intelligent agents learn from your conversations, documents, feedback, and seamlessly integrate with over 2,700+ applications, including Google Drive, Salesforce, and Notion. Whether answering questions or managing follow-ups, they handle everything efficiently.</p>
+                        
+                        <a href="#features" class="btn btn-outline-success btn-lg">
+                            Explore All Integrations <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Capability Section End -->
+
+    <!-- Smart Delegation Section Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <!-- Placeholder for future image -->
+                    <div class="bg-white rounded shadow-sm p-5 text-center mb-4 mb-lg-0">
+                        <i class="fas fa-robot fa-5x text-warning mb-3"></i>
+                        <p class="text-muted mb-0">AI Workflow Demo<br><small>Automation screenshot will be added here</small></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="ps-lg-4">
+                        <h6 class="text-warning text-uppercase mb-3">Smart Delegation</h6>
+                        <h2 class="mb-4">AI Knows What to Take Off Your Plate</h2>
+                        <p class="lead mb-4">Super Agent intelligently identifies patterns in your workflow and proactively suggests tasks it can handle—from sending updates and reminders to managing repetitive inquiries. Stop searching for opportunities to delegate; let the AI assistance come directly to you.</p>
+                        
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                    <span>Automatic task identification</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                    <span>Smart reminders & follow-ups</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                    <span>Repetitive query management</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                    <span>Workflow pattern recognition</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Smart Delegation Section End -->
+
+    <!-- CTA Section Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="mb-4 display-5">Launch Your AI Effortlessly and Connect it Everywhere</h2>
+                <p class="lead text-muted mb-5">Forget the hassle of integration. Boost teams with instant AI.</p>
+                <a href="contact.html" class="btn btn-dark btn-lg px-5 py-3 rounded-pill">
+                    Get Started <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                        <img src="img/short logo.png" alt="CodimAI Logo" class="footer-logo">
+                    </a>
+                    <p class="mt-4 text-light">Everything About AI</p>
+                    <div class="d-flex hightech-link">
+                        <a href="https://www.facebook.com/profile.php?id=61578209616406" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="https://twitter.com/codimai" target="_blank" rel="noopener noreferrer" title="Visit our Twitter page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="https://www.instagram.com/codim.ai/" target="_blank" rel="noopener noreferrer" title="Visit our Instagram page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="https://www.linkedin.com/in/shivam-gupta-089518308/" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Short Link</h3>
+                    <div class="mt-4 d-flex flex-column short-link">
+                        <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>About us</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Contact us</a>
+                        <a href="service.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Our Services</a>
+                        <a href="pricing.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Pricing</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Products</h3>
+                    <div class="mt-4 d-flex flex-column help-link">
+                        <a href="product-slack.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Slack Agent</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Teams Agent</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Custom Solutions</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Contact Us</h3>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-danger me-2"></i>Mumbai, India</a>
+                        <a href="tel:+918369693412" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-danger me-2"></i>+91 83696 93412</a>
+                        <a href="mailto:Support@codimai.com" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-danger me-2"></i>Support@codimai.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-light"><a href="#" class="text-danger"><i class="fas fa-copyright text-danger me-2"></i>codimai</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <a href="#" title="Back to top" class="btn btn-danger btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

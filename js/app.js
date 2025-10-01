@@ -1,7 +1,62 @@
 // CodimAI Website - Optimized Application JavaScript
 document.addEventListener("DOMContentLoaded", function () {
     
-    // Mobile menu functionality
+    // Hamburger menu functionality for mobile
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    
+    if (hamburgerMenu && mobileMenuOverlay) {
+        // Open mobile menu
+        hamburgerMenu.addEventListener('click', function() {
+            mobileMenuOverlay.classList.add('active');
+            hamburgerMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close mobile menu
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenuOverlay.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+        
+        // Close menu when clicking overlay background
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileMenuOverlay) {
+                mobileMenuOverlay.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking any nav link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Don't close for dropdown toggles
+                if (!this.classList.contains('dropdown-toggle')) {
+                    mobileMenuOverlay.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Handle mobile dropdown toggles
+        const dropdownToggles = document.querySelectorAll('.mobile-dropdown .dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+    }
+    
+    // Mobile menu functionality (legacy support)
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navbarRight = document.querySelector('.navbar-left');
     
@@ -152,8 +207,65 @@ document.addEventListener("DOMContentLoaded", function () {
     const solutionsDropdown = document.querySelector(".solutions-dropdown");
     const solutionsMenu = document.querySelector(".solutions-menu");
 
-    setupDropdownHover(productDropdown, productMenu);
-    setupDropdownHover(solutionsDropdown, solutionsMenu, 'grid');
+    // Add click functionality for dropdowns - CLICK TO OPEN/CLOSE
+    if (productDropdown && productMenu) {
+        const productLink = productDropdown.querySelector('.nav-link');
+        if (productLink) {
+            productLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isVisible = productMenu.classList.contains('show');
+                
+                // Close all dropdowns first
+                document.querySelectorAll('.product-menu, .solutions-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+                
+                // Toggle current dropdown
+                if (!isVisible) {
+                    productMenu.classList.add('show');
+                }
+            });
+        }
+    }
+    
+    if (solutionsDropdown && solutionsMenu) {
+        const solutionsLink = solutionsDropdown.querySelector('.nav-link');
+        if (solutionsLink) {
+            solutionsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const isVisible = solutionsMenu.classList.contains('show');
+                
+                // Close all dropdowns first
+                document.querySelectorAll('.product-menu, .solutions-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+                
+                // Toggle current dropdown
+                if (!isVisible) {
+                    solutionsMenu.classList.add('show');
+                }
+            });
+        }
+    }
+    
+    // Ensure dropdowns start hidden (remove show class if present)
+    if (productMenu) productMenu.classList.remove('show');
+    if (solutionsMenu) solutionsMenu.classList.remove('show');
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!productDropdown?.contains(e.target) && !solutionsDropdown?.contains(e.target)) {
+            document.querySelectorAll('.product-menu, .solutions-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+    });
+
+    // DISABLED: Hover functionality - now using click-only
+    // setupDropdownHover(productDropdown, productMenu);
+    // setupDropdownHover(solutionsDropdown, solutionsMenu, 'grid');
 
     // Integration grid rendering with performance optimization
     const integrationGrid = document.getElementById('integrationGrid');
