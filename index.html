@@ -395,17 +395,20 @@
   </div>
   <!-- Fact End -->
 
-  <!-- Integrations Grid Start -->
+  <!-- Integrations Wheel Start -->
   <section class="integration-grid-container">
     <h1 class="grid-heading">Technology Integrations</h1>
-    <div class="integration-grid" id="integrationGrid" role="list" aria-label="Technology integrations">
-    </div>
-    <div class="integration-actions">
-      <button class="search-integrations">🔎 Search all 2000+ integrations</button>
-      <button class="toggle-partners">Show fewer partners</button>
+    <div class="integration-wheel-container" id="integrationWheelContainer">
+      <div class="wheel" id="integrationWheel" role="region" aria-label="Orbiting technology integrations">
+        <div class="wheel-spokes"></div>
+        <div class="center-logo">
+          <img src="img/CODIM logo web.png" alt="CodimAi Logo">
+        </div>
+        <div class="orbit" id="iconOrbit" role="list" aria-label="Integration icons orbit"></div>
+      </div>
     </div>
   </section>
-  <!-- Integrations Grid End -->
+  <!-- Integrations Wheel End -->
 
   <!-- About Start -->
   <section class="automation-platform-section">
@@ -967,19 +970,25 @@
         { name: 'Loki', slug: 'grafana', color: '#F46800' }
       ];
 
-      const grid = document.getElementById('integrationGrid');
-      if (grid) {
-        const createTile = (ic) => {
-          const tile = document.createElement('div');
-          tile.className = 'integration-tile';
-          tile.setAttribute('role', 'listitem');
+      // Build orbiting icons around the center CodimAi logo
+      const orbit = document.getElementById('iconOrbit');
+      const wheel = document.getElementById('integrationWheel');
+      if (orbit && wheel) {
+        const centerRect = wheel.getBoundingClientRect();
+        const diameter = Math.min(centerRect.width, centerRect.height);
+        // radius used for placement (match CSS --radius when possible)
+        const radius = Math.max(diameter * 0.35, 120);
 
-          const card = document.createElement('a');
-          card.href = 'contact.html';
-          card.className = 'integration-card';
+        icons.forEach((ic, index) => {
+          const li = document.createElement('div');
+          li.setAttribute('role', 'listitem');
+          li.className = 'icon';
 
-          const media = document.createElement('div');
-          media.className = 'integration-media';
+          const a = document.createElement('a');
+          a.href = 'contact.html';
+          a.className = 'icon-inner';
+          a.setAttribute('aria-label', ic.name);
+          a.title = ic.name;
 
           const img = document.createElement('img');
           if (ic.slug) {
@@ -988,21 +997,38 @@
             img.onerror = () => { img.onerror = null; img.src = `https://cdn.simpleicons.org/${ic.slug}`; };
           } else {
             img.src = ic.src;
-            img.onerror = () => { media.innerHTML = `<span>${ic.name[0] || '?'}</span>`; img.remove(); };
+            img.onerror = () => { img.style.display = 'none'; };
           }
           img.alt = ic.name;
-          media.appendChild(img);
+          a.appendChild(img);
 
-          const label = document.createElement('div');
-          label.className = 'integration-label';
-          label.textContent = ic.name;
+          li.appendChild(a);
+          orbit.appendChild(li);
 
-          card.appendChild(media);
-          card.appendChild(label);
-          tile.appendChild(card);
-          return tile;
-        }
-        icons.forEach(ic => grid.appendChild(createTile(ic)));
+          // position the icon around the circle
+          const angle = (index / icons.length) * Math.PI * 2;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
+
+          li.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Recalculate positions on resize to keep layout correct
+        const recalc = () => {
+          const rect = wheel.getBoundingClientRect();
+          const dia = Math.min(rect.width, rect.height);
+          const r = Math.max(dia * 0.35, 80);
+          const nodes = orbit.querySelectorAll('.icon');
+          nodes.forEach((node, i) => {
+            const ang = (i / nodes.length) * Math.PI * 2;
+            const xx = Math.cos(ang) * r;
+            const yy = Math.sin(ang) * r;
+            node.style.transform = `translate(${xx}px, ${yy}px)`;
+          });
+        };
+        window.addEventListener('resize', recalc);
+        // run once after images load
+        window.requestAnimationFrame(recalc);
       }
     });
   </script>
