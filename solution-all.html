@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions for Every Team - CodimAi | Transform Your Business with AI</title>
+    <meta name="description" content="Empower every team in your organization with AI-powered solutions. From support and sales to marketing, finance, and executive teams.">
+    <meta name="keywords" content="AI solutions, business AI, team automation, AI agents, enterprise AI, AI consultancy">
+    <meta name="author" content="CodimAi Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://codimai.com/solutions.html">
+    
+    <meta property="og:title" content="AI Solutions for Every Team - CodimAi">
+    <meta property="og:description" content="Transform every department with intelligent AI automation and agents.">
+    <meta property="og:image" content="https://codimai.com/img/preview.jpg">
+    <meta property="og:url" content="https://codimai.com/solutions.html">
+    
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Hero Section Styles */
+        .hero-solutions {
+            padding: 75px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(45deg, #0a1128, #1e2749, #0a1128, #2c3e50);
+            background-size: 600% 600%;
+            animation: gradientAnimation 20s ease-in-out infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-solutions .hero-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-solutions .hero-subheading {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Scrolling Logos Animation */
+        .scrolling-solutions-logos {
+            display: flex;
+            width: fit-content;
+            flex-wrap: nowrap;
+            animation: scroll 60s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        .scrolling-solutions-logos:hover {
+            animation-play-state: paused;
+        }
+
+        .scrolling-solutions-logos.reverse {
+            animation: scroll-reverse 60s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @keyframes scroll-reverse {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        .solution-badge {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            margin: 0 15px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .solution-badge:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 123, 255, 0.75);
+            border-color: rgba(0, 123, 255, 1);
+        }
+
+        .solution-badge i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Team Cards */
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card.primary:hover { border-color: #007bff; }
+        .team-card.success:hover { border-color: #28a745; }
+        .team-card.warning:hover { border-color: #ffc107; }
+        .team-card.info:hover { border-color: #17a2b8; }
+        .team-card.danger:hover { border-color: #dc3545; }
+        .team-card.purple:hover { border-color: #6f42c1; }
+        .team-card.dark:hover { border-color: #343a40; }
+        .team-card.teal:hover { border-color: #20c997; }
+
+        .team-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .bg-purple { background-color: #6f42c1; }
+        .bg-teal { background-color: #20c997; }
+        .text-purple { color: #6f42c1; }
+        .text-teal { color: #20c997; }
+        .text-gold { color: #ffd700; }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-cta-buttons {
+            margin-top: 3rem;
+        }
+
+        .hero-cta-buttons .btn {
+            margin: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-solutions {
+                padding: 50px 0;
+            }
+            .solution-badge {
+                padding: 10px 24px;
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+            .team-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html"><img src="img/CODIM logo web.png" alt="CodimAi Logo" class="logo-image"></a>
+      </div>
+      
+      <div class="navbar-right">
+        <button class="hamburger-menu" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        
+        <ul class="nav-links desktop-nav">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown product-dropdown">
+            <a href="#" class="nav-link">Product <span class="arrow">▼</span></a>
+            <div class="product-menu">
+              <div class="menu-heading">
+                <h3>AI Agents for Your Workspace</h3>
+              </div>
+              <a href="product-slack.html" class="product-item">
+                <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="item-icon">
+                <div class="item-text"><h3>Slack</h3></div>
+              </a>
+              <a href="product-teams.html" class="product-item">
+                <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="Teams" class="item-icon">
+                <div class="item-text"><h3>Microsoft Teams</h3></div>
+              </a>
+              <a href="product-hubspot.html" class="product-item">
+                <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="item-icon">
+                <div class="item-text"><h3>HubSpot</h3></div>
+              </a>
+              <a href="product-zendesk.html" class="product-item">
+                <img src="https://cdn.simpleicons.org/zendesk/03363D" alt="Zendesk" class="item-icon">
+                <div class="item-text"><h3>Zendesk</h3></div>
+              </a>
+              <a href="product-discord.html" class="product-item">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="item-icon">
+                <div class="item-text"><h3>Discord</h3></div>
+              </a>
+              <a href="contact.html" class="product-item">
+                <i class="fas fa-plug item-icon"></i>
+                <div class="item-text"><h3>Integrations</h3></div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown solutions-dropdown">
+            <a href="#" class="nav-link active">Solutions <span class="arrow">▼</span></a>
+            <div class="solutions-menu">
+              <a href="solution-support.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-headphones size-6 grayscale" aria-hidden="true" focusable="false"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg>
+                <div class="item-text">
+                  <h3>Support Team</h3>
+                  <p>AI-powered customer support</p>
+                </div>
+              </a>
+              <a href="solution-sales.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-handshake size-6 grayscale" aria-hidden="true" focusable="false"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
+                <div class="item-text">
+                  <h3>Sales Team</h3>
+                  <p>Sales enablement & automation</p>
+                </div>
+              </a>
+              <a href="solution-marketing.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-chart-no-axes-column-increasing size-6 grayscale" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg>
+                <div class="item-text">
+                  <h3>Marketing Team</h3>
+                  <p>Track visitors, monitor campaigns, and share reports with AI.</p>
+                </div>
+              </a>
+              <a href="solution-people.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-users size-6 grayscale" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <div class="item-text">
+                  <h3>People Team</h3>
+                  <p>Empower people team to create AI agents.</p>
+                </div>
+              </a>
+              <a href="solution-finance.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-hand-coins size-6 grayscale" aria-hidden="true" focusable="false"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"></path><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"></path><path d="m2 16 6 6"></path><circle cx="16" cy="9" r="2.9"></circle><circle cx="6" cy="5" r="3"></circle></svg>
+                <div class="item-text">
+                  <h3>Finance Team</h3>
+                  <p>Build your AI agents to manage money and maximize value.</p>
+                </div>
+              </a>
+              <a href="solution-account.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-notebook-tabs size-6 grayscale" aria-hidden="true" focusable="false"><path d="M2 6h4"></path><path d="M2 10h4"></path><path d="M2 14h4"></path><path d="M2 18h4"></path><rect width="16" height="20" x="4" y="2" rx="2"></rect><path d="M15 2v20"></path><path d="M15 7h5"></path><path d="M15 12h5"></path><path d="M15 17h5"></path></svg>
+                <div class="item-text">
+                  <h3>Account Manager</h3>
+                  <p>Deepen your B2B relationships with AI agents.</p>
+                </div>
+              </a>
+              <a href="solution-executive.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-pen-tool size-6 grayscale" aria-hidden="true" focusable="false"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"></path><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"></path><path d="m2.3 2.3 7.286 7.286"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                <div class="item-text">
+                  <h3>Executive Team</h3>
+                  <p>Transform business oversight into insight with AI agents.</p>
+                </div>
+              </a>
+              <a href="solution-consultancies.html" class="solution-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-icon lucide lucide-presentation size-6 grayscale" aria-hidden="true" focusable="false"><path d="M2 3h20"></path><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path><path d="m7 21 5-5 5 5"></path></svg>
+                <div class="item-text">
+                  <h3>AI Consultancies</h3>
+                  <p>Deliver AI solutions that your clients will love.</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+        </ul>
+        <a href="contact.html" class="get-started-btn">Get Started</a>
+      </div>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-panel">
+          <div class="mobile-menu-header">
+            <img src="img/CODIM logo web.png" alt="CodimAi Logo" class="mobile-logo">
+            <button class="mobile-menu-close" aria-label="Close menu">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <nav class="mobile-menu-nav">
+            <ul class="mobile-nav-links">
+              <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+              <li class="mobile-nav-item mobile-dropdown">
+                <a href="#" class="mobile-nav-link dropdown-toggle">Product <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                  <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
+                  <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
+                  <li><a href="product-hubspot.html" class="mobile-dropdown-link">HubSpot</a></li>
+                  <li><a href="product-zendesk.html" class="mobile-dropdown-link">Zendesk</a></li>
+                  <li><a href="product-discord.html" class="mobile-dropdown-link">Discord</a></li>
+                  <li><a href="contact.html" class="mobile-dropdown-link">Integrations</a></li>
+                </ul>
+              </li>
+              <li class="mobile-nav-item mobile-dropdown">
+                <a href="#" class="mobile-nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                  <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
+                  <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
+                  <li><a href="solution-marketing.html" class="mobile-dropdown-link">Marketing Team</a></li>
+                  <li><a href="solution-people.html" class="mobile-dropdown-link">People Team</a></li>
+                  <li><a href="solution-finance.html" class="mobile-dropdown-link">Finance Team</a></li>
+                  <li><a href="solution-account.html" class="mobile-dropdown-link">Account Manager</a></li>
+                  <li><a href="solution-executive.html" class="mobile-dropdown-link">Executive Team</a></li>
+                  <li><a href="solution-consultancies.html" class="mobile-dropdown-link">AI Consultancies</a></li>
+                </ul>
+              </li>
+              <li class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+              <a href="contact.html" class="mobile-get-started-btn">Get Started</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero-solutions">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h1 class="hero-heading">AI Solutions for <span class="text-info">Every Team</span> in Your Organization</h1>
+                    <p class="hero-subheading">Empower your entire organization with intelligent AI agents tailored for every department—from support and sales to marketing, finance, and executive leadership.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- First Row: Team Solutions -->
+        <div class="scrolling-solutions-logos">
+            <div class="solution-badge">
+                <i class="fas fa-headset"></i>Support Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-handshake"></i>Sales Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-bullhorn"></i>Marketing Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-users"></i>People Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-chart-line"></i>Finance Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-briefcase"></i>Account Manager
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-crown"></i>Executive Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-lightbulb"></i>AI Consultancies
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="solution-badge">
+                <i class="fas fa-headset"></i>Support Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-handshake"></i>Sales Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-bullhorn"></i>Marketing Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-users"></i>People Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-chart-line"></i>Finance Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-briefcase"></i>Account Manager
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-crown"></i>Executive Team
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-lightbulb"></i>AI Consultancies
+            </div>
+        </div>
+
+        <!-- Second Row (Reverse): Features -->
+        <div class="scrolling-solutions-logos reverse">
+            <div class="solution-badge">
+                <i class="fas fa-robot"></i>AI Automation
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-brain"></i>Smart Insights
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-clock"></i>24/7 Availability
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-chart-bar"></i>Analytics
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-cogs"></i>Integration
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-shield-alt"></i>Secure
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-language"></i>Multi-Language
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-bolt"></i>Fast Setup
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="solution-badge">
+                <i class="fas fa-robot"></i>AI Automation
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-brain"></i>Smart Insights
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-clock"></i>24/7 Availability
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-chart-bar"></i>Analytics
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-cogs"></i>Integration
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-shield-alt"></i>Secure
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-language"></i>Multi-Language
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-bolt"></i>Fast Setup
+            </div>
+        </div>
+
+        <!-- Third Row: Platforms -->
+        <div class="scrolling-solutions-logos">
+            <div class="solution-badge">
+                <i class="fas fa-comments"></i>Slack
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-envelope"></i>Email
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-cloud"></i>Cloud CRM
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-phone"></i>Phone Support
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-globe"></i>Web Chat
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-database"></i>Data Analytics
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-mobile-alt"></i>Mobile
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-link"></i>API Access
+            </div>
+            <!-- Duplicates for seamless loop -->
+            <div class="solution-badge">
+                <i class="fas fa-comments"></i>Slack
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-envelope"></i>Email
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-cloud"></i>Cloud CRM
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-phone"></i>Phone Support
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-globe"></i>Web Chat
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-database"></i>Data Analytics
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-mobile-alt"></i>Mobile
+            </div>
+            <div class="solution-badge">
+                <i class="fas fa-link"></i>API Access
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center hero-cta-buttons">
+                    <a href="contact.html" class="btn btn-light btn-lg px-5 py-3">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                    <a href="#teams" class="btn btn-outline-light btn-lg px-5 py-3">
+                        <i class="fas fa-th me-2"></i>Explore Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Teams Overview Section Start -->
+    <div class="container-xxl py-5" id="teams">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-3">Our Solutions</h6>
+                <h1 class="mb-4">AI Agents for Every Department</h1>
+                <p class="lead text-muted">Choose the solution that fits your team's needs</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Support Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-card primary">
+                        <div class="team-icon bg-primary">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Support Team</h4>
+                        <p class="text-center text-muted mb-4">Empower support team to quickly find answers with AI</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>24/7 Support</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Ticket Automation</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Knowledge Base</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Multi-Channel</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="solution-support.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-card success">
+                        <div class="team-icon bg-success">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Sales Team</h4>
+                        <p class="text-center text-muted mb-4">Build your AI agents for sales enablement</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lead Scoring</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>CRM Automation</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Deal Intelligence</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Email Sequences</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="solution-sales.html" class="btn btn-success">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card warning">
+                        <div class="team-icon bg-warning">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Marketing Team</h4>
+                        <p class="text-center text-muted mb-4">Track visitors, monitor campaigns, and share reports with AI</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Campaign Analytics</li>
+                            <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Visitor Tracking</li>
+                            <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Content Generation</li>
+                            <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>SEO Insights</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- People Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-card info">
+                        <div class="team-icon bg-info">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="text-center mb-3">People Team</h4>
+                        <p class="text-center text-muted mb-4">Empower people team to create AI agents</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Recruitment AI</li>
+                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Onboarding</li>
+                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Employee Support</li>
+                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Performance Tracking</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-info">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finance Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-card danger">
+                        <div class="team-icon bg-danger">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Finance Team</h4>
+                        <p class="text-center text-muted mb-4">Build your AI agents to manage money and maximize value</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Financial Analysis</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Budget Forecasting</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Expense Tracking</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Audit Automation</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-danger">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Manager Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="team-card purple">
+                        <div class="team-icon bg-purple">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Account Manager</h4>
+                        <p class="text-center text-muted mb-4">Deepen your B2B relationships with AI agents</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>Client Insights</li>
+                            <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>Relationship Tracking</li>
+                            <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>Upsell Opportunities</li>
+                            <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>Health Scoring</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-outline-purple">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Team Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-card dark">
+                        <div class="team-icon bg-dark">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Executive Team</h4>
+                        <p class="text-center text-muted mb-4">Transform business oversight into insight with AI agents</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>Strategic Insights</li>
+                            <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>KPI Dashboard</li>
+                            <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>Risk Analysis</li>
+                            <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>Market Intelligence</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-dark">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Consultancies Card -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="team-card teal">
+                        <div class="team-icon bg-teal">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="text-center mb-3">AI Consultancies</h4>
+                        <p class="text-center text-muted mb-4">Deliver AI solutions that your clients will love</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-teal me-2"></i>White-Label Solution</li>
+                            <li class="mb-2"><i class="fas fa-check text-teal me-2"></i>Multi-Client Support</li>
+                            <li class="mb-2"><i class="fas fa-check text-teal me-2"></i>Custom Branding</li>
+                            <li class="mb-2"><i class="fas fa-check text-teal me-2"></i>Partner Program</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-outline-info">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Teams Overview Section End -->
+
+    <!-- Key Benefits Section Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-3">Why Choose CodimAi</h6>
+                <h1 class="mb-4">Enterprise-Grade AI for Every Team</h1>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="text-center p-4 bg-white rounded h-100">
+                        <div class="bg-primary circle-badge-80 mb-4">
+                            <i class="fas fa-rocket fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">10x Faster</h4>
+                        <p class="mb-0">Deployment & Results</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="text-center p-4 bg-white rounded h-100">
+                        <div class="bg-success circle-badge-80 mb-4">
+                            <i class="fas fa-dollar-sign fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">60% Cost</h4>
+                        <p class="mb-0">Reduction Average</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="text-center p-4 bg-white rounded h-100">
+                        <div class="bg-info circle-badge-80 mb-4">
+                            <i class="fas fa-users fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">500+ Teams</h4>
+                        <p class="mb-0">Trust CodimAi</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="text-center p-4 bg-white rounded h-100">
+                        <div class="bg-warning circle-badge-80 mb-4">
+                            <i class="fas fa-clock fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">24/7</h4>
+                        <p class="mb-0">AI Availability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Key Benefits Section End -->
+
+    <!-- Features Section Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-3">Core Capabilities</h6>
+                <h1 class="mb-4">Powerful Features Across All Solutions</h1>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.1s">
+                    <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">AI Intelligence</h5>
+                    <p class="text-muted mb-0">Advanced machine learning models trained for your industry</p>
+                </div>
+
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.2s">
+                    <i class="fas fa-plug fa-3x text-success mb-3"></i>
+                    <h5 class="mb-3">Easy Integration</h5>
+                    <p class="text-muted mb-0">Connect with your existing tools in minutes</p>
+                </div>
+
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.3s">
+                    <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                    <h5 class="mb-3">Enterprise Security</h5>
+                    <p class="text-muted mb-0">SOC 2 compliant with end-to-end encryption</p>
+                </div>
+
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.4s">
+                    <i class="fas fa-chart-bar fa-3x text-info mb-3"></i>
+                    <h5 class="mb-3">Real-Time Analytics</h5>
+                    <p class="text-muted mb-0">Track performance with detailed insights and reports</p>
+                </div>
+
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.5s">
+                    <i class="fas fa-language fa-3x text-warning mb-3"></i>
+                    <h5 class="mb-3">Multi-Language</h5>
+                    <p class="text-muted mb-0">Support for 100+ languages worldwide</p>
+                </div>
+
+                <div class="feature-item wow fadeInUp" data-wow-delay="0.6s">
+                    <i class="fas fa-users-cog fa-3x text-purple mb-3"></i>
+                    <h5 class="mb-3">Team Collaboration</h5>
+                    <p class="text-muted mb-0">Built for cross-functional team workflows</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Section End -->
+
+    <!-- CTA Section Start -->
+    <div class="container-xxl py-5 bg-primary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h2 class="text-white mb-3"><i class="fas fa-rocket me-3"></i>Ready to Transform Your Organization?</h2>
+                    <p class="text-white mb-0 lead">Join hundreds of companies using CodimAi to automate workflows and accelerate growth across every department.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end wow fadeInRight" data-wow-delay="0.3s">
+                    <a href="contact.html" class="btn btn-light btn-lg py-3 px-5">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+
+    <!-- Footer -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html"><img src="img/short logo.png" alt="CodimAI Logo" class="footer-logo"></a>
+                    <p class="mt-4 text-light">Everything About AI</p>
+                    <div class="d-flex hightech-link">
+                        <a href="https://www.facebook.com/profile.php?id=61578209616406" target="_blank" rel="noopener noreferrer" title="Facebook" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="https://twitter.com/codimai" target="_blank" rel="noopener noreferrer" title="Twitter" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="https://www.instagram.com/codim.ai/" target="_blank" rel="noopener noreferrer" title="Instagram" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="https://www.linkedin.com/in/shivam-gupta-089518308/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Short Link</h3>
+                    <div class="mt-4 d-flex flex-column short-link">
+                        <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>About us</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Contact us</a>
+                        <a href="service.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Our Services</a>
+                        <a href="pricing.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Pricing</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Solutions</h3>
+                    <div class="mt-4 d-flex flex-column help-link">
+                        <a href="solution-support.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Support Team</a>
+                        <a href="solution-sales.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Sales Team</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Marketing Team</a>
+                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>All Solutions</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-danger">Contact Us</h3>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-danger me-2"></i>Mumbai, India</a>
+                        <a href="tel:+918369693412" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-danger me-2"></i>+91 83696 93412</a>
+                        <a href="mailto:Support@codimai.com" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-danger me-2"></i>Support@codimai.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-light"><a href="#" class="text-danger"><i class="fas fa-copyright text-danger me-2"></i>codimai</a>, All right reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" title="Back to top" class="btn btn-danger btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

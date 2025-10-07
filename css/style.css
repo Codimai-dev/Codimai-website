@@ -844,6 +844,7 @@ img.lazy-load.loaded {
  align-items: center;
  justify-content: center;
  flex-shrink: 0;
+ margin: auto;
 }
 
 .circle-badge-60 {
