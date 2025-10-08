@@ -1,4 +1,3 @@
-
 * {
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -52,7 +51,6 @@ html::-webkit-scrollbar {
  z-index: 5;
  margin-top: 0;
  clear: both;
- padding: 2rem 0 !important;
 }
 
 .bg-danger .text-white,
@@ -610,6 +608,47 @@ body.mobile-menu-open {
  }
 }
 
+/* ==== Desktop: move main nav items to the right ==== */
+@media (min-width: 993px) {
+  /* make navbar distribute space between logo (left) and nav (right) */
+  .navbar {
+    justify-content: space-between !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* ensure left area (logo) stays left and no absolute offset interferes */
+  .navbar-left {
+    position: relative !important;
+    left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem;
+  }
+
+  /* push nav-links to the right side */
+  .nav-links {
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  /* keep get-started button inline on the right (avoid absolute overlap) */
+  .get-started-btn {
+    position: relative !important;
+    right: 0 !important;
+    margin-left: 1rem !important;
+    z-index: 1101 !important;
+  }
+
+  /* ensure navbar-right groups items on the right */
+  .navbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+}
+
 
 .ripple {
  position: absolute;
@@ -898,6 +937,37 @@ img.lazy-load.loaded {
  align-items: center;
  justify-content: center;
  flex-shrink: 0;
+}
+
+/* Ensure utility-based rounded-circle badges used in feature/use-case lists
+   remain perfectly circular and center their icon regardless of Bootstrap
+   padding utilities. Targets the common pattern: .d-flex.align-items-start > .rounded-circle.p-3 */
+.d-flex.align-items-start .rounded-circle.p-3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0 !important; /* remove extra padding so width/height control the size */
+  flex-shrink: 0;
+}
+
+.d-flex.align-items-start .rounded-circle.p-3 i,
+.d-flex.align-items-start .rounded-circle.p-3 img {
+  font-size: 1.4rem; /* slightly larger than normal to match previous visual */
+  line-height: 1;
+}
+
+@media (max-width: 576px) {
+  .d-flex.align-items-start .rounded-circle.p-3 {
+    width: 48px;
+    height: 48px;
+  }
+
+  .d-flex.align-items-start .rounded-circle.p-3 i,
+  .d-flex.align-items-start .rounded-circle.p-3 img {
+    font-size: 1.25rem;
+  }
 }
 
 /* Glassmorphism Effect */
