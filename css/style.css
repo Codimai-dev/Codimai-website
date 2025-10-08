@@ -91,7 +91,6 @@ section {
 }
 
 h1, h2, h3, h4, h5, h6 {
- margin-bottom: 1rem;
  font-weight: 600;
  line-height: 1.3;
 }
@@ -2879,9 +2878,9 @@ img.lazy-load.loaded {
 
 /* wheel section start */
 :root {
- --size: 640px;
- --radius: 260px;
- --icon-size: 72px;
+ --size: min(80vw, 640px);
+ --radius: min(40vw, 260px);
+ --icon-size: min(9vw, 72px);
  --spin-duration: 30s;
  --spoke-color: rgba(255, 255, 255, 0.1);
  --spoke-width: 2px;
@@ -2889,8 +2888,8 @@ img.lazy-load.loaded {
 
 .wheel-heading {
  color: #000000;
- font-size: 2rem;
- margin-bottom: 40px;
+ font-size: clamp(1.5rem, 4vw, 2rem);
+ margin-bottom: clamp(20px, 4vw, 40px);
  text-align: center;
 }
 
@@ -3027,24 +3026,26 @@ img.lazy-load.loaded {
 
 /* Ensure the center logo appears in a crisp circular badge */
 .center-logo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 160px;
-	height: 160px;
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 3;
-	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-	background: #ffffff;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: min(25vw, 160px);
+ height: min(25vw, 160px);
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 3;
+ box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+ background: #ffffff;
 }
 
-.center-logo img { width: 110px; height: auto; display: block; }
-
-@media (prefers-reduced-motion: reduce) {
+.center-logo img { 
+ width: min(17vw, 110px); 
+ height: auto; 
+ display: block; 
+}@media (prefers-reduced-motion: reduce) {
 	.orbit, .icon-inner { animation-duration: 0.001ms !important; }
 }
 
@@ -3063,18 +3064,18 @@ img.lazy-load.loaded {
 
 @media (max-width: 700px) {
  :root {
- --size: 420px;
- --radius: 160px;
- --icon-size: 56px;
+ --size: min(90vw, 420px);
+ --radius: min(45vw, 160px);
+ --icon-size: min(12vw, 56px);
  --spin-duration: 28s;
  --spoke-width: 1px;
  }
  .center-logo {
- width: 120px;
- height: 120px;
+ width: min(30vw, 120px);
+ height: min(30vw, 120px);
  }
  .center-logo img {
- width: 80px;
+ width: min(20vw, 80px);
  }
  .wheel-heading {
  font-size: 1.5rem;
@@ -3089,10 +3090,10 @@ img.lazy-load.loaded {
  display: flex;
  justify-content: center;
  align-items: center;
- min-height: 60vh;
- margin: 0 auto 60px auto;
+ min-height: clamp(50vh, 70vh, 80vh);
+ margin: 10px;
  flex-direction: column;
- padding: 40px 20px;
+ padding: 10px;
 }
 
 /* new integration grid styles */
@@ -3100,7 +3101,7 @@ img.lazy-load.loaded {
  display: flex;
  flex-direction: column;
  align-items: center;
- padding: 80px 20px 80px;
+ padding: 10px;
  margin-top: 0;
  position: relative;
  z-index: 1;
@@ -3108,9 +3109,8 @@ img.lazy-load.loaded {
 }
 
 .grid-heading {
- font-size: 2.5rem;
+ font-size: clamp(2rem, 5vw, 2.5rem);
  color: #000;
- margin-bottom: 40px;
  text-align: center;
  font-weight: 700;
  letter-spacing: -0.02em;

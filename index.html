@@ -312,7 +312,7 @@
             <ul class="mobile-nav-links">
               <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
               <li class="mobile-nav-item mobile-dropdown">
-                <a href="#" class="mobile-nav-link dropdown-toggle">Product <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="mobile-nav-link dropdown-toggle">Product</a>
                 <ul class="mobile-dropdown-menu">
                   <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
                   <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
@@ -323,7 +323,7 @@
                 </ul>
               </li>
               <li class="mobile-nav-item mobile-dropdown">
-                <a href="#" class="mobile-nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="mobile-nav-link dropdown-toggle">Solutions</a>
                 <ul class="mobile-dropdown-menu">
                   <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
                   <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
@@ -970,7 +970,7 @@
       if (orbit && wheel) {
   const centerRect = wheel.getBoundingClientRect();
   const diameter = Math.min(centerRect.width, centerRect.height);
-  const radius = Math.max(diameter * 0.5, 160);
+  const radius = Math.max(diameter * 0.4, Math.min(window.innerWidth * 0.15, 160));
 
         icons.forEach((ic, index) => {
           const li = document.createElement('div');
@@ -1010,7 +1010,7 @@
         const recalc = () => {
           const rect = wheel.getBoundingClientRect();
           const dia = Math.min(rect.width, rect.height);
-          const r = Math.max(dia * 0.5, 120);
+          const r = Math.max(dia * 0.4, Math.min(window.innerWidth * 0.12, 120));
           const nodes = orbit.querySelectorAll('.icon');
           nodes.forEach((node, i) => {
             const ang = (i / nodes.length) * Math.PI * 2;
