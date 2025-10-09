@@ -282,7 +282,7 @@ body {
 .hamburger-line {
  width: 20px;
  height: 2px;
- background-color: #495057;
+ background-color: #574949;
  border-radius: 2px;
  transition: all 0.3s ease;
  transform-origin: center;
@@ -397,7 +397,7 @@ body {
 
 .mobile-menu-close:hover {
  background: rgba(0, 123, 255, 0.1);
- color: #007bff;
+ color: #ff0000;
 }
 
 /* Mobile Menu Navigation */
@@ -489,13 +489,13 @@ body {
  font-size: 1.1rem;
  border-radius: 12px;
  transition: all 0.3s ease;
- box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+ box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 
 .mobile-get-started-btn:hover {
  background: linear-gradient(135deg, #b30000, #850000);
  transform: translateY(-2px);
- box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+ box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
  color: #fff;
 }
 
@@ -557,13 +557,13 @@ body {
  font-size: 1.1rem;
  border-radius: 12px;
  transition: all 0.3s ease;
- box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+ box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 
 .mobile-get-started-btn:hover {
- background: linear-gradient(135deg, #0056b3, #004085);
+ background: linear-gradient(135deg, #b30000, #850000);
  transform: translateY(-2px);
- box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+ box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
  color: white;
 }
 
@@ -710,10 +710,10 @@ img.lazy-load.loaded {
 
 @keyframes pulse {
  0%, 100% {
- box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+ box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
  }
  50% {
- box-shadow: 0 4px 25px rgba(0, 123, 255, 0.5);
+ box-shadow: 0 4px 25px rgba(255, 0, 0, 0.5);
  }
 }
 
@@ -1191,7 +1191,7 @@ img.lazy-load.loaded {
  
  .logo-image:hover {
  transform: scale(1.05);
- filter: drop-shadow(0 4px 8px rgba(0, 123, 255, 0.3));
+ filter: drop-shadow(0 4px 8px rgba(255, 4, 4, 0.3));
  }
 
  .navbar-right {
@@ -1365,7 +1365,7 @@ img.lazy-load.loaded {
  
  .nav-links.open .nav-link:hover,
  .nav-links.open .nav-link:focus {
- background-color: rgba(0, 123, 255, 0.08);
+ background-color: rgba(255, 0, 0, 0.08);
  color: #ff0000;
  transform: translateX(4px);
  }
@@ -1388,7 +1388,7 @@ img.lazy-load.loaded {
  background: none;
  border: none;
  font-size: 1.5rem;
- color: #495057;
+ color: #876161;
  cursor: pointer;
 
  /* Navbar hamburger: force to the far right edge and vertically center
@@ -1700,13 +1700,13 @@ img.lazy-load.loaded {
  .get-started-btn:hover {
  background: linear-gradient(135deg, #b30000 0%, #850000 100%);
  transform: translateY(-2px);
- box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
+ box-shadow: 0 6px 25px rgba(255, 0, 0, 0.4);
  color: #fff;
  }
  
  .get-started-btn:active {
  transform: translateY(0);
- box-shadow: 0 3px 15px rgba(0, 123, 255, 0.3);
+ box-shadow: 0 3px 15px rgba(255, 0, 0, 0.3);
  }
  @media (max-width: 992px) {
  .navbar {
@@ -2216,7 +2216,7 @@ img.lazy-load.loaded {
 
 .form-group input:hover,
 .form-group textarea:hover {
- border-color: rgba(0, 123, 255, 0.4);
+ border-color: rgba(255, 0, 0, 0.4);
  background: rgba(255, 220, 220, 0.9);
 }
 
@@ -2245,7 +2245,7 @@ img.lazy-load.loaded {
  color: #fff;
  cursor: pointer;
  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
- box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+ box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
  position: relative;
  overflow: hidden;
 }
@@ -2543,7 +2543,7 @@ img.lazy-load.loaded {
  height: auto;
  width: 100%;
  overflow: visible;
- background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+ background: linear-gradient(135deg, #080808 0%, #000000 100%);
  display: flex;
  align-items: center;
  justify-content: center;
@@ -2572,20 +2572,21 @@ img.lazy-load.loaded {
  padding: 14px 32px;
  font-size: 16px;
  font-weight: 600;
- color: #fff;
- background: linear-gradient(90deg, #1e1e1e, #919596);
+ color: #000000;
+ background: linear-gradient(90deg, #ffffff, #838282);
  border-radius: 30px;
  text-decoration: none;
  transition: all 0.3s ease;
- box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ box-shadow: 0 4px 15px rgba(227, 220, 220, 0.2);
  position: relative;
  z-index: 60;
 }
 
 .demo-btn:hover {
  background: linear-gradient(90deg, #ff0000, #ff5151);
+ color: #fffcfc;
  transform: scale(1.05);
- box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+ box-shadow: 0 6px 20px rgba(199, 193, 193, 0.3);
 }
  /* Liquid Animated Gradient */
  .liquid-gradient {
@@ -2596,9 +2597,9 @@ img.lazy-load.loaded {
  height: 150%;
  z-index: 1;
  background: 
- radial-gradient(circle at var(--x1, 30%) var(--y1, 30%), #ff0000 0%, transparent 40%),
- radial-gradient(circle at var(--x2, 70%) var(--y2, 40%), #ff9090 0%, transparent 40%),
- radial-gradient(circle at var(--x3, 50%) var(--y3, 70%), #fdfdfd 0%, transparent 40%);
+ radial-gradient(circle at var(--x1, 30%) var(--y1, 30%), #201f3f 0%, transparent 40%),
+ radial-gradient(circle at var(--x2, 70%) var(--y2, 40%), #08070f 0%, transparent 40%),
+ radial-gradient(circle at var(--x3, 50%) var(--y3, 70%), #000000 0%, transparent 40%);
  background-blend-mode: screen;
  filter: blur(100px);
  animation: animateBlobs 2s ease-in-out infinite alternate;
@@ -3340,16 +3341,12 @@ img.lazy-load.loaded {
 }
 
 .super-agent-gradient {
-    background-image: linear-gradient(90deg, #f63b3b, #f65c5c, #ec4899); 
+    background-image: linear-gradient(90deg, #fb3333, #f66b6b, #ec4899); 
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  
   /* Subtle glow effect for that 'cyber' look */
-  .super-agent-glow {
-    text-shadow: 0 0 10px rgba(246, 92, 92, 0.8), 0 0 20px rgba(250, 60, 60, 0.5);
-    transition: all 0.3s ease-in-out;
-  }
-  .super-agent-glow:hover {
-    text-shadow: 0 0 15px rgb(246, 92, 92), 0 0 30px rgba(250, 60, 60, 0.7);
-  }
+  
+  
