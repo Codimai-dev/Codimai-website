@@ -365,32 +365,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                        <div class="p-5 h-100 rounded contact-map">
-                            <iframe class="rounded w-100 h-100 contact-map-iframe" title="Google Maps location of Bandra Kurla Complex, Mumbai" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15084.031479311116!2d72.86061085!3d19.0633916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8df0b86ea1b%3A0xce7eea4b1bbdf296!2sBandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1753342923624!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                        <form class="p-5 rounded contact-form">
-                            <div class="mb-4">
-                                <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name" required>
-                            </div>
-                            <div class="mb-4">
-                                <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email" required>
-                            </div>
-                            <div class="mb-4">
-                                <input type="text" class="form-control border-0 py-3" placeholder="Project" name="project">
-                            </div>
-                            <div class="mb-4">
-                                <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message" name="message" required></textarea>
-                            </div>
-                            <div class="text-start">
-                                <button class="btn bg-danger text-white py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
+  <div class="row g-5 align-items-stretch">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+            <div class="p-5 h-100 rounded contact-map">
+              <iframe class="rounded w-100 h-100 contact-map-iframe" title="Google Maps location of Bandra Kurla Complex, Mumbai" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15084.031479311116!2d72.86061085!3d19.0633916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8df0b86ea1b%3A0xce7eea4b1bbdf296!2sBandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1753342923624!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+            <div class="form-container mx-lg-auto h-100">
+              <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" required placeholder="John Doe" />
                 </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                </div>
+                <div class="form-group">
+                  <label for="company">Company / Organization</label>
+                  <input type="text" id="company" name="company" placeholder="CodimAI" />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" required
+                    placeholder="Tell us about your AI project..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
             </div>
         </div>
     </div>
