@@ -1,8 +1,8 @@
 // CodimAI Website - Optimized Application JavaScript
 document.addEventListener("DOMContentLoaded", function () {
 
-  const form = document.querySelector('.contact-form');
-  const submitButton = form.querySelector('.btn-submit');
+    const form = document.querySelector('.contact-form');
+    const submitButton = form ? form.querySelector('.btn-submit') : null;
 
         const SVG_SUCCESS = `
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="72" height="72" aria-hidden="true" focusable="false">
@@ -10,49 +10,51 @@ document.addEventListener("DOMContentLoaded", function () {
             </svg>`;
         const SVG_ERROR = `<svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-    function showFormPopup(type, message, timeout = 3500) {
+    function showFormPopup(type, message, timeout = 0) {
+            // Prevent duplicate success dialogs in the same session
             if (type === 'success' && sessionStorage.getItem('codimai_form_submitted')) {
                 return;
             }
 
-            const existing = document.querySelector('.form-popup-overlay');
+            // Remove any existing Codimai modal
+            const existing = document.querySelector('.codimai-modal-overlay');
             if (existing) existing.remove();
 
         const overlay = document.createElement('div');
-        overlay.className = 'form-popup-overlay';
-        overlay.setAttribute('role', 'alert');
-        overlay.setAttribute('aria-live', 'polite');
+        overlay.className = 'codimai-modal-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
 
-        const box = document.createElement('div');
-        box.className = 'form-popup';
+        const modal = document.createElement('div');
+        modal.className = 'codimai-modal';
 
-        const iconWrap = document.createElement('div');
-        iconWrap.className = `form-popup-icon ${type}`;
-        iconWrap.innerHTML = type === 'success' ? SVG_SUCCESS : SVG_ERROR;
+        const title = document.createElement('h2');
+        title.className = 'codimai-modal-title';
+        title.textContent = type === 'success' ? 'Success!' : (type === 'error' ? 'Error' : 'Notice');
 
-        const msg = document.createElement('div');
-        msg.className = 'form-popup-message';
-        msg.textContent = message;
+        const body = document.createElement('p');
+        body.className = 'codimai-modal-body';
+        body.textContent = message;
 
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'form-popup-close';
-        closeBtn.type = 'button';
-        closeBtn.setAttribute('aria-label', 'Close message');
-        closeBtn.innerHTML = '&times;';
+        const okBtn = document.createElement('button');
+        okBtn.className = 'codimai-modal-ok';
+        okBtn.type = 'button';
+        okBtn.textContent = 'OK';
 
-        closeBtn.addEventListener('click', () => overlay.remove());
+        // Close handlers
+        okBtn.addEventListener('click', () => overlay.remove());
         overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 
-        box.appendChild(iconWrap);
-        box.appendChild(msg);
-        box.appendChild(closeBtn);
-        overlay.appendChild(box);
+        // Assemble
+        modal.appendChild(title);
+        modal.appendChild(body);
+        modal.appendChild(okBtn);
+        overlay.appendChild(modal);
         document.body.appendChild(overlay);
 
-            if (timeout > 0) {
-                setTimeout(() => {
-                    overlay.remove();
-                }, timeout);
+            // optional auto-close only when timeout is explicitly > 0
+            if (typeof timeout === 'number' && timeout > 0) {
+                setTimeout(() => overlay.remove(), timeout);
             }
 
             if (type === 'success') {
@@ -60,30 +62,38 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
-    const formData = new FormData(form);
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
+            const formData = new FormData(form);
 
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
 
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     console.log('Success!', response);
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }
                     showFormPopup('success', 'Thank you! Your message has been sent successfully.');
                     form.reset();
                 })
-            .catch(error => {
-                console.error('Error!', error.message);
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }
                     showFormPopup('error', 'An error occurred while sending your message. Please try again.');
-            });
-  });
+                });
+        });
+    }
     
     // Hamburger menu functionality for mobile
     const hamburgerMenu = document.querySelector('.hamburger-menu');
