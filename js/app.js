@@ -1,4 +1,32 @@
 // CodimAI Website - Optimized Application JavaScript
+  const form = document.querySelector('.contact-form');
+  const submitButton = form.querySelector('.btn-submit');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
+    const formData = new FormData(form);
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        console.log('Success!', response);
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+        alert('Thank you! Your message has been sent successfully.');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+        alert('An error occurred while sending your message. Please try again.');
+      });
+  });
+
 document.addEventListener("DOMContentLoaded", function () {
     
     // Hamburger menu functionality for mobile
