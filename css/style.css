@@ -1149,7 +1149,7 @@ img.lazy-load.loaded {
 }
 
  .navbar {
- position: fixed;
+ position: sticky;
  top: 0;
  left: 0;
  right: 0;
@@ -1262,7 +1262,7 @@ img.lazy-load.loaded {
 
  @media (max-width: 768px) {
  .navbar {
- position: fixed;
+ position: sticky;
  top: 0;
  left: 0;
  right: 0;

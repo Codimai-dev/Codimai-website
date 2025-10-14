@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (isValid) {
                 // Show success popup instead of changing button text
-                showFormPopup('success', 'All required fields look good — your message will be sent.');
+                showFormPopup('success', 'Your form has been submitted.');
                 const submitBtn = form.querySelector('.btn-submit, button[type="submit"]');
                 if (submitBtn) {
                     // brief visual feedback on the button (non-destructive)
