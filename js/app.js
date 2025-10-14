@@ -1,4 +1,6 @@
 // CodimAI Website - Optimized Application JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+
   const form = document.querySelector('.contact-form');
   const submitButton = form.querySelector('.btn-submit');
 
@@ -26,8 +28,6 @@
         alert('An error occurred while sending your message. Please try again.');
       });
   });
-
-document.addEventListener("DOMContentLoaded", function () {
     
     // Hamburger menu functionality for mobile
     const hamburgerMenu = document.querySelector('.hamburger-menu');
