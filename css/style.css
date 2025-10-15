@@ -1378,9 +1378,6 @@ img.lazy-load.loaded {
  padding-top: 1rem;
  border-top: 1px solid #000000;
  }
- body {
- padding-top: 64px;
- }
  }
 
  .hamburger-menu {
@@ -1651,6 +1648,21 @@ img.lazy-load.loaded {
  object-fit: contain;
  flex-shrink: 0;
  }
+
+/* Make the icons used inside services cards match the dropdown/navbar icons
+   and keep consistent sizing and spacing across the site. */
+.services-content-icon .item-icon,
+.services-content-icon svg.item-icon {
+  width: 72px; /* larger size similar to previous fa-7x visual impact */
+  height: 72px;
+  display: block;
+  margin: 0 auto 16px auto;
+  color: #1b1b1b; /* ensure stroke inherits readable color */
+}
+
+.services-content-icon svg.item-icon { stroke-width: 1.6; }
+
+.services-content-icon h4 { margin-top: 6px; }
 
  .item-text h3 {
  font-size: 1rem;
@@ -2887,9 +2899,6 @@ img.lazy-load.loaded {
  }
 
  /* Footer */
- .footer {
- text-align: center;
- }
 
  .footer .col-lg-3,
  .footer .col-md-6 {
