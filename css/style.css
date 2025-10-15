@@ -1149,7 +1149,7 @@ img.lazy-load.loaded {
 }
 
  .navbar {
- position: fixed;
+ position: sticky;
  top: 0;
  left: 0;
  right: 0;
@@ -1262,7 +1262,7 @@ img.lazy-load.loaded {
 
  @media (max-width: 768px) {
  .navbar {
- position: fixed;
+ position: sticky;
  top: 0;
  left: 0;
  right: 0;
@@ -1997,6 +1997,69 @@ img.lazy-load.loaded {
 .tab-button.active {
  background-color: #ff1f1f;
  color: white;
+}
+
+/* Codimai centered modal (replaces previous form popup) */
+.codimai-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 99999;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.codimai-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 28px 20px 28px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  max-width: 520px;
+  width: min(92%, 520px);
+  text-align: center;
+  position: relative;
+  animation: codimaiModalIn 300ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.codimai-modal-title {
+  color: #ff3b30; /* attention/red */
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.codimai-modal-body {
+  color: #222222;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.codimai-modal-ok {
+  display: inline-block;
+  background: #ff3333; /* orange button */
+  color: #fff;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255,102,51,0.28);
+}
+
+.codimai-modal-ok:active { transform: translateY(1px); }
+
+@keyframes codimaiModalIn { from { transform: translateY(8px) scale(0.995); opacity: 0 } to { transform: translateY(0) scale(1); opacity: 1 } }
+
+/* keep old helper for transient button state (still used elsewhere) */
+.btn-temp-success {
+  box-shadow: 0 6px 18px rgba(40,167,69,0.18) !important;
+  transform: translateY(-1px) !important;
+  border-color: rgba(40,167,69,0.12) !important;
 }
 
 .tab-content {
@@ -3345,7 +3408,3 @@ img.lazy-load.loaded {
     background-clip: text;
     color: transparent;
   }
-  
-  /* Subtle glow effect for that 'cyber' look */
-  
-  

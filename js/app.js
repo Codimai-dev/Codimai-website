@@ -1,5 +1,99 @@
 // CodimAI Website - Optimized Application JavaScript
 document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector('.contact-form');
+    const submitButton = form ? form.querySelector('.btn-submit') : null;
+
+        const SVG_SUCCESS = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="72" height="72" aria-hidden="true" focusable="false">
+                <path fill="#43A047" d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
+            </svg>`;
+        const SVG_ERROR = `<svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+    function showFormPopup(type, message, timeout = 0) {
+            // Prevent duplicate success dialogs in the same session
+            if (type === 'success' && sessionStorage.getItem('codimai_form_submitted')) {
+                return;
+            }
+
+            // Remove any existing Codimai modal
+            const existing = document.querySelector('.codimai-modal-overlay');
+            if (existing) existing.remove();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'codimai-modal-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+
+        const modal = document.createElement('div');
+        modal.className = 'codimai-modal';
+
+        const title = document.createElement('h2');
+        title.className = 'codimai-modal-title';
+        title.textContent = type === 'success' ? 'Success!' : (type === 'error' ? 'Error' : 'Notice');
+
+        const body = document.createElement('p');
+        body.className = 'codimai-modal-body';
+        body.textContent = message;
+
+        const okBtn = document.createElement('button');
+        okBtn.className = 'codimai-modal-ok';
+        okBtn.type = 'button';
+        okBtn.textContent = 'OK';
+
+        // Close handlers
+        okBtn.addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+
+        // Assemble
+        modal.appendChild(title);
+        modal.appendChild(body);
+        modal.appendChild(okBtn);
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+            // optional auto-close only when timeout is explicitly > 0
+            if (typeof timeout === 'number' && timeout > 0) {
+                setTimeout(() => overlay.remove(), timeout);
+            }
+
+            if (type === 'success') {
+                try { sessionStorage.setItem('codimai_form_submitted', String(Date.now())); } catch (e) { /* ignore */ }
+            }
+    }
+
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
+            const formData = new FormData(form);
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    console.log('Success!', response);
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }
+                    showFormPopup('success', 'Thank you! Your message has been sent successfully.');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }
+                    showFormPopup('error', 'An error occurred while sending your message. Please try again.');
+                });
+        });
+    }
     
     // Hamburger menu functionality for mobile
     const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -456,20 +550,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             
             if (isValid) {
-                // Show success state
+                // Show success popup instead of changing button text
+                showFormPopup('success', 'Your form has been submitted.');
                 const submitBtn = form.querySelector('.btn-submit, button[type="submit"]');
                 if (submitBtn) {
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Sent Successfully!';
-                    submitBtn.style.backgroundColor = '#28a745';
-                    submitBtn.disabled = true;
-                    
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.backgroundColor = '';
-                        submitBtn.disabled = false;
-                        form.reset();
-                    }, 3000);
+                    // brief visual feedback on the button (non-destructive)
+                    submitBtn.classList.add('btn-temp-success');
+                    setTimeout(() => submitBtn.classList.remove('btn-temp-success'), 1200);
                 }
             }
         });
