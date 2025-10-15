@@ -11,12 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const SVG_ERROR = `<svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
     function showFormPopup(type, message, timeout = 0) {
-            // Prevent duplicate success dialogs in the same session
-            if (type === 'success' && sessionStorage.getItem('codimai_form_submitted')) {
-                return;
-            }
 
-            // Remove any existing Codimai modal
             const existing = document.querySelector('.codimai-modal-overlay');
             if (existing) existing.remove();
 
@@ -62,37 +57,36 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     }
 
-    if (form) {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
+    function sendContactForm(targetForm) {
+        if (!targetForm) return;
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
+        const formData = new FormData(targetForm);
+        const btn = targetForm.querySelector('.btn-submit, button[type="submit"]');
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyHFRhYi5BpzC0IamnmJbBmAaLGRVzFMgD_q4cjXydIvs0JURIjozPYs0nQKvOsfVs/exec';
-            const formData = new FormData(form);
+        if (btn) {
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+        }
 
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-            }
-
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => {
-                    console.log('Success!', response);
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
-                    }
-                    showFormPopup('success', 'Thank you! Your message has been sent successfully.');
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
-                    }
-                    showFormPopup('error', 'An error occurred while sending your message. Please try again.');
-                });
-        });
+        return fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                showFormPopup('success', 'Thank you! Your message has been sent successfully.');
+                targetForm.reset();
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                }
+                return response;
+            })
+            .catch(error => {
+                console.error('Error!', error && error.message ? error.message : error);
+                showFormPopup('error', 'An error occurred while sending your message. Please try again.');
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                }
+                throw error;
+            });
     }
     
     // Hamburger menu functionality for mobile
@@ -550,14 +544,15 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             
             if (isValid) {
-                // Show success popup instead of changing button text
-                showFormPopup('success', 'Your form has been submitted.');
+                // After validation, perform the actual send (centralized) so there's a single,
+                // consistent success/error popup message across pages.
                 const submitBtn = form.querySelector('.btn-submit, button[type="submit"]');
                 if (submitBtn) {
-                    // brief visual feedback on the button (non-destructive)
                     submitBtn.classList.add('btn-temp-success');
                     setTimeout(() => submitBtn.classList.remove('btn-temp-success'), 1200);
                 }
+                // sendContactForm returns a promise; we don't need to await here but could.
+                sendContactForm(form).catch(() => {/* already handled in sendContactForm */});
             }
         });
     });
