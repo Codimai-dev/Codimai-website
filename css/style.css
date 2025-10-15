@@ -211,7 +211,7 @@ body {
  z-index: 1100;
  background: white;
  border-radius: 12px;
- grid-template-columns: 1fr !important;
+ grid-template-columns: auto auto !important;
  gap: 0.5rem !important;
  min-width: min(520px, 90vw) !important;
  max-width: min(720px, 95vw) !important;
@@ -2740,7 +2740,7 @@ img.lazy-load.loaded {
  }
 
  .hero-content h1 {
- font-size: 2.5rem;
+ font-size: 4.5rem !important;
  line-height: 1.3;
  }
 

@@ -52,20 +52,20 @@
     </div>
 
     <!-- Navbar Start -->
-    <nav class="navbar" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1rem;">
-      <div class="navbar-left">
-        <a href="index.html"><img src="img/CODIM logo web.png" alt="CodimAi Logo" class="logo-image"></a>
-      </div>
-      <div class="navbar-right">
-        <!-- Right-side hamburger menu for all screen sizes -->
-                <button class="hamburger-menu" aria-label="Toggle navigation menu">
-                    <i class='bx bx-menu' aria-hidden="true"></i>
-                </button>
+      <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html"><img src="img/CODIM logo web.png" alt="CodimAi Logo" class="logo-image"></a>
+        </div>
         
-                <!-- Desktop nav links -->
-                <ul class="nav-links desktop-nav" style="display:flex;align-items:center;gap:1rem;margin:0;padding:0;list-style:none;">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item dropdown product-dropdown">
+        <div class="navbar-right">
+                    <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                        <i class='bx bx-menu' aria-hidden="true"></i>
+                    </button>
+            
+            <!-- Desktop nav links -->
+        <ul class="nav-links desktop-nav">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown product-dropdown">
             <a href="#" class="nav-link active">Product <span class="arrow" aria-hidden="true"><svg width="10" height="6"
                   viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -134,7 +134,7 @@
                 </svg>
                 <div class="item-text">
                   <h3>Support Team</h3>
-                  <p>Empower support team to quickly find answers with AI.</p>
+                  <p>Empower team to quickly find answers with AI.</p>
                 </div>
               </a>
               <a href="solution-sales.html" class="solution-item">
@@ -250,55 +250,54 @@
               </a>
             </div>
           </li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                </ul>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+        </ul>
         <a href="contact.html" class="get-started-btn">Get Started</a>
       </div>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-        <div class="mobile-menu-panel">
-          <div class="mobile-menu-header">
-            <img src="img/CODIM logo web.png" alt="CodimAi Logo" class="mobile-logo">
-            <button class="mobile-menu-close" aria-label="Close menu">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <nav class="mobile-menu-nav">
-            <ul class="mobile-nav-links">
-              <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-              <li class="mobile-nav-item mobile-dropdown">
-                <a href="#" class="mobile-nav-link dropdown-toggle">Product</a>
-                <ul class="mobile-dropdown-menu">
-                  <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
-                  <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
-                  <li><a href="product-hubspot.html" class="mobile-dropdown-link">HubSpot</a></li>
-                  <li><a href="product-zendesk.html" class="mobile-dropdown-link">Zendesk</a></li>
-                  <li><a href="product-discord.html" class="mobile-dropdown-link">Discord</a></li>
-                  <li><a href="contact.html" class="mobile-dropdown-link">Integrations</a></li>
-                </ul>
-              </li>
-              <li class="mobile-nav-item mobile-dropdown">
-                <a href="#" class="mobile-nav-link dropdown-toggle">Solutions</a>
-                <ul class="mobile-dropdown-menu">
-                  <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
-                  <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
-                  <li><a href="solution-marketing.html" class="mobile-dropdown-link">Marketing Team</a></li>
-                  <li><a href="solution-people.html" class="mobile-dropdown-link">People Team</a></li>
-                  <li><a href="solution-finance.html" class="mobile-dropdown-link">Finance Team</a></li>
-                  <li><a href="solution-account.html" class="mobile-dropdown-link">Account Manager</a></li>
-                  <li><a href="solution-executive.html" class="mobile-dropdown-link">Executive Team</a></li>
-                  <li><a href="solution-consultancies.html" class="mobile-dropdown-link">AI Consultancies</a></li>
-                </ul>
-              </li>
-              <li class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
-            </ul>
-            <div class="mobile-menu-footer">
-              <a href="contact.html" class="mobile-get-started-btn">Get Started</a>
+
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-panel">
+                <div class="mobile-menu-header">
+                    <img src="img/CODIM logo web.png" alt="CodimAi Logo" class="mobile-logo">
+                    <button class="mobile-menu-close" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-menu-nav">
+                    <ul class="mobile-nav-links">
+                        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <a href="#" class="mobile-nav-link dropdown-toggle">Product</a>
+                            <ul class="mobile-dropdown-menu">
+                                <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
+                                <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
+                                <li><a href="product-hubspot.html" class="mobile-dropdown-link">HubSpot</a></li>
+                                <li><a href="product-zendesk.html" class="mobile-dropdown-link">Zendesk</a></li>
+                                <li><a href="product-discord.html" class="mobile-dropdown-link">Discord</a></li>
+                                <li><a href="contact.html" class="mobile-dropdown-link">Integrations</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-nav-item mobile-dropdown">
+                            <a href="#" class="mobile-nav-link dropdown-toggle">Solutions</a>
+                            <ul class="mobile-dropdown-menu">
+                                <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
+                                <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
+                                <li><a href="solution-marketing.html" class="mobile-dropdown-link">Marketing Team</a></li>
+                                <li><a href="solution-people.html" class="mobile-dropdown-link">People Team</a></li>
+                                <li><a href="solution-finance.html" class="mobile-dropdown-link">Finance Team</a></li>
+                                <li><a href="solution-account.html" class="mobile-dropdown-link">Account Manager</a></li>
+                                <li><a href="solution-executive.html" class="mobile-dropdown-link">Executive Team</a></li>
+                                <li><a href="solution-consultancies.html" class="mobile-dropdown-link">AI Consultancies</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+                    </ul>
+                    <div class="mobile-menu-footer">
+                        <a href="contact.html" class="mobile-get-started-btn">Get Started</a>
+                    </div>
+                </nav>
             </div>
-          </nav>
         </div>
-      </div>
     </nav>
     <!-- Navbar End -->
 
