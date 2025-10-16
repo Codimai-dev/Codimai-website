@@ -109,7 +109,7 @@
         // Simulate form submission (replace with actual endpoint)
         setTimeout(() => {
             // Success simulation
-            showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+            showNotification('Your form has been submitted', 'success');
             form.reset();
             
             // Re-enable button

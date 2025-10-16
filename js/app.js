@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return fetch(scriptURL, { method: 'POST', body: formData })
             .then(response => {
-                showFormPopup('success', 'Thank you! Your message has been sent successfully.');
+                showFormPopup('success', 'Your form has been submitted.');
                 targetForm.reset();
                 if (btn) {
                     btn.disabled = false;
