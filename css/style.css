@@ -1170,7 +1170,7 @@ img.lazy-load.loaded {
 }
 
  .navbar {
- position: sticky;
+ position: fixed;
  top: 0;
  left: 0;
  right: 0;
@@ -1283,7 +1283,7 @@ img.lazy-load.loaded {
 
  @media (max-width: 768px) {
  .navbar {
- position: sticky;
+ position: fixed;
  top: 0;
  left: 0;
  right: 0;
@@ -1909,6 +1909,17 @@ img.lazy-load.loaded {
 
 .page-header-contact {
  background: linear-gradient(135deg, #fff5f5 0%, #f8f9fa 100%);
+}
+
+/* Contact page heading offset to avoid navbar overlap */
+.contact-hero {
+  margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    margin-top: 80px;
+  }
 }
 
 .page-header .breadcrumb-item+.breadcrumb-item::before {
