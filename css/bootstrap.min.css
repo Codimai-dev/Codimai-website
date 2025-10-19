@@ -7359,13 +7359,7 @@ fieldset:disabled .btn {
     border-right: 0 !important
 }
 
-.border-bottom {
-    border-bottom: 1px solid #dee2e6 !important
-}
 
-.border-bottom-0 {
-    border-bottom: 0 !important
-}
 
 .border-start {
     border-left: 1px solid #dee2e6 !important
@@ -7375,9 +7369,6 @@ fieldset:disabled .btn {
     border-left: 0 !important
 }
 
-.border-primary {
-    border-color: #1842b6 !important
-}
 
 .border-secondary {
     border-color: #26d48c !important

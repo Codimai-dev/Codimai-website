@@ -1234,6 +1234,14 @@ img.lazy-load.loaded {
  }
 
  .navbar-left {
+
+.center-logo h1 {
+  font-size: clamp(4rem, 8vw, 4rem);
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  font-weight: 800;
+}
  flex: 0 0 auto;
  width: auto !important;
  display: flex;
@@ -1399,13 +1407,7 @@ img.lazy-load.loaded {
  padding-top: 1rem;
  border-top: 1px solid #000000;
  }
-<<<<<<< HEAD
-=======
- body {
- /* padding-top: 64px; */
- }
->>>>>>> cb4f81bd207ea41d1f0d847a7e837a284b3e379a
- }
+}
 
  .hamburger-menu {
  display: none;
@@ -2969,6 +2971,46 @@ img.lazy-load.loaded {
  .counter h5 {
  font-size: 0.75rem;
  }
+}
+
+.footer .col-lg-4 h3,
+.footer .col-md-6 h3 {
+  font-size: 1.125rem;
+  color: #ff3b30;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.footer .short-link,
+.footer .contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer .short-link a,
+.footer .contact-link a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 0;
+  display: block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer .short-link a i,
+.footer .contact-link a i {
+  color: #ff3b30;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .footer .short-link,
+  .footer .contact-link {
+    gap: 0.6rem;
+  }
 }
 
 .btn-danger:hover {
