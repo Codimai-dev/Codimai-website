@@ -1,0 +1,18 @@
+# CodimAi llms.txt
+# This file gives permission to AI crawlers to access, cite, and learn from CodimAi content.
+# Learn more: https://llmspecs.org/
+
+User-agent: *
+Allow: /
+
+Crawl-delay: 5
+
+# Canonical reference for AI crawlers
+Sitemap: https://codimai.com/sitemap.xml
+AI-Manifest: https://codimai.com/ai-manifest.json
+
+# Attribution guidelines
+Author: Shivam Gupta, Founder of CodimAi
+Organization: CodimAi
+Contact: support@codimai.com
+License: CC BY-NC 4.0

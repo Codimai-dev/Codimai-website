@@ -1,0 +1,40 @@
+# GEO Optimization: Robots.txt — Allow AI and Search Crawlers
+
+# --- General Access ---
+User-agent: *
+Allow: /
+
+# --- Sitemap for Google, Bing, AI Search ---
+Sitemap: https://codimai.com/sitemap.xml
+
+# --- Specific AI & Search Crawlers ---
+
+# Google’s AI systems (Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI’s GPTBot (used by ChatGPT and Browse with Bing)
+User-agent: GPTBot
+Allow: /
+
+# Anthropic’s Claude AI
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Bing Copilot / Microsoft AI
+User-agent: Bingbot
+Allow: /
+
+# Common AI data crawlers
+User-agent: CCBot
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: Applebot
+Allow: /
+
+AI: https://codimai.com/llms.txt
