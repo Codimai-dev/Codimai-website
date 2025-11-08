@@ -36,5 +36,8 @@ User-agent: FacebookBot
 Allow: /
 User-agent: Applebot
 Allow: /
+<<<<<<< HEAD
 
 AI: https://codimai.com/llms.txt
+=======
+>>>>>>> b44120f12471b5c275bde1054bc52c6abd2a4490
