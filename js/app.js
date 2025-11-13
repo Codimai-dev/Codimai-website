@@ -1,4 +1,3 @@
-// CodimAI Website - Optimized Application JavaScript
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.querySelector('.contact-form');

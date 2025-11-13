@@ -39,3 +39,6 @@ build/
 *.backup
 *.bak
 *~
+
+# Environment
+.env

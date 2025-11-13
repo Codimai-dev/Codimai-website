@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Blog Builder - CodimAi Admin</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/blog-admin.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div id="spinner" class="spinner-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="admin-container">
+    <!-- Header -->
+    <header class="admin-header" data-aos="fade-down">
+      <div class="header-left">
+        <h1>CodimAi Blog Builder</h1>
+      </div>
+      <div class="header-actions">
+        <span id="userEmail" class="user-info">
+          <i class="fas fa-user-circle"></i> <span></span>
+        </span>
+        <button id="logoutBtn" class="btn-logout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="admin-content">
+      <!-- Tab Navigation -->
+      <div class="tabs" data-aos="fade-up" data-aos-delay="100">
+        <button class="tab-btn active" data-tab="create">
+          <i class="fas fa-plus-circle"></i> Create New Post
+        </button>
+        <button class="tab-btn" data-tab="manage">
+          <i class="fas fa-list"></i> Manage Posts
+        </button>
+        <button class="tab-btn" data-tab="markdown">
+          <i class="fas fa-file-upload"></i> Upload Markdown
+        </button>
+      </div>
+
+      <!-- Create New Post Tab -->
+      <div id="createTab" class="tab-content active">
+        <div class="form-section" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="section-heading">
+            <i class="fas fa-edit"></i>
+            Create New Blog Post
+          </h2>
+          
+          <!-- AI Generation Section -->
+          <div class="ai-section">
+            <h3><i class="fas fa-magic"></i> Generate with AI</h3>
+            <p class="section-description">Let our AI create engaging blog content automatically based on your topic and keywords</p>
+            
+            <div class="form-group">
+              <label for="aiTopic">
+                <i class="fas fa-lightbulb"></i>
+                Blog Topic *
+              </label>
+              <input type="text" id="aiTopic" class="form-control" placeholder="e.g., Future of Artificial Intelligence in Healthcare" />
+            </div>
+            
+            <div class="form-group">
+              <label for="aiKeywords">
+                <i class="fas fa-tags"></i>
+                Keywords (comma-separated)
+              </label>
+              <input type="text" id="aiKeywords" class="form-control" placeholder="AI, machine learning, healthcare, innovation..." />
+              <small class="form-text">Optional: Add keywords to focus the content</small>
+            </div>
+            
+            <button id="generateContentBtn" class="btn-primary btn-lg">
+              <i class="fas fa-sparkles"></i> Generate Content with AI
+            </button>
+          </div>
+
+          <div class="divider">
+            <span>OR CREATE MANUALLY</span>
+          </div>
+
+          <!-- Manual Entry Section -->
+          <div class="manual-section" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <h3><i class="fas fa-keyboard"></i> Manual Entry</h3>
+            
+            <div class="form-group">
+              <label for="blogTitle">
+                <i class="fas fa-heading"></i>
+                Title *
+              </label>
+              <input type="text" id="blogTitle" class="form-control" placeholder="Enter your blog title..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="blogSlug">
+                <i class="fas fa-link"></i>
+                URL Slug
+              </label>
+              <input type="text" id="blogSlug" class="form-control" placeholder="auto-generated-from-title" />
+              <small class="form-text">Auto-generated from title, or customize it</small>
+            </div>
+
+            <div class="form-row" style="display:flex; gap:1rem; align-items:flex-start;">
+              <div class="form-group" style="flex:1;">
+                <label for="blogAuthor">
+                  <i class="fas fa-user-edit"></i>
+                  Author
+                </label>
+                <input type="text" id="blogAuthor" class="form-control" placeholder="Author name" value="CodimAi Team" />
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label for="blogCategory">
+                  <i class="fas fa-folder"></i>
+                  Category
+                </label>
+                <select id="blogCategory" class="form-control">
+                  <option>AI Automation</option>
+                  <option>Machine Learning</option>
+                  <option>Business Growth</option>
+                  <option>Web Development</option>
+                  <option>SEO & Marketing</option>
+                  <option>Tutorial & Guide</option>
+                  <option>News & Updates</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="blogExcerpt">
+                <i class="fas fa-align-left"></i>
+                Excerpt / Summary
+              </label>
+              <textarea id="blogExcerpt" class="form-control" rows="3" placeholder="Brief 2-3 sentence summary of your blog post..."></textarea>
+              <small class="form-text">This appears in blog listing cards and search results</small>
+            </div>
+
+            <div class="form-group">
+              <label for="blogContent">
+                <i class="fas fa-file-alt"></i>
+                Content (Markdown Supported)
+              </label>
+              <div class="editor-toolbar">
+                <button type="button" class="toolbar-btn" data-action="bold" title="Bold">
+                  <i class="fas fa-bold"></i> <span>Bold</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="italic" title="Italic">
+                  <i class="fas fa-italic"></i> <span>Italic</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="heading" title="Heading">
+                  <i class="fas fa-heading"></i> <span>Heading</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="link" title="Link">
+                  <i class="fas fa-link"></i> <span>Link</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="image" title="Image">
+                  <i class="fas fa-image"></i> <span>Image</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="video" title="Video">
+                  <i class="fas fa-video"></i> <span>Video</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="code" title="Code">
+                  <i class="fas fa-code"></i> <span>Code</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="list" title="List">
+                  <i class="fas fa-list"></i> <span>List</span>
+                </button>
+                <button type="button" class="toolbar-btn" data-action="quote" title="Quote">
+                  <i class="fas fa-quote-right"></i> <span>Quote</span>
+                </button>
+              </div>
+              <textarea id="blogContent" class="form-control editor-textarea" rows="18" placeholder="Write your content in markdown..."></textarea>
+              <div class="editor-help">
+                <small>
+                  <i class="fas fa-info-circle"></i>
+                  <strong>Markdown Guide:</strong> **bold**, *italic*, ## headings, [links](url), ![images](url), \`code\`, > quotes
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="blogMetaDesc">
+                <i class="fas fa-search"></i>
+                Meta Description (SEO)
+              </label>
+              <textarea id="blogMetaDesc" class="form-control" rows="2" placeholder="Write a compelling 150-160 character description for search engines..." maxlength="160"></textarea>
+              <div class="char-count-wrapper">
+                <small class="form-text">Optimal length: 150-160 characters for better SEO</small>
+                <small class="char-count"><span id="metaCharCount">0</span>/160</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="blogTags">
+                <i class="fas fa-hashtag"></i>
+                Tags (comma-separated)
+              </label>
+              <input type="text" id="blogTags" class="form-control" placeholder="ai, technology, innovation, machine learning..." />
+              <small class="form-text">Add relevant tags to improve discoverability and SEO</small>
+            </div>
+
+
+            <!-- Publishing Options -->
+            <div class="publish-section" style="margin-top:1rem;">
+              <h3><i class="fas fa-rocket"></i> Publishing Options</h3>
+
+              <div class="form-check" style="margin-top:0.75rem; display:flex; align-items:flex-start; gap:0.75rem;">
+                <input type="checkbox" id="publishNow" checked style="margin-top:6px;" />
+                <label for="publishNow" style="display:block;">
+                  <strong style="display:block;">Publish immediately</strong>
+                  <span style="display:block; color:#6c757d; font-size:0.95rem; margin-top:0.25rem;">Make this post visible to public right away</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+              <button type="button" id="previewBtn" class="btn-secondary">
+                <i class="fas fa-eye"></i> Preview
+              </button>
+              <button type="button" id="saveDraftBtn" class="btn-secondary">
+                <i class="fas fa-save"></i> Save as Draft
+              </button>
+              <button type="button" id="publishBtn" class="btn-primary btn-lg">
+                <i class="fas fa-paper-plane"></i> Publish Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manage Posts Tab -->
+      <div id="manageTab" class="tab-content">
+        <div class="manage-section" data-aos="fade-up" data-aos-delay="200">
+          <div class="section-header">
+            <h2 class="section-heading"><i class="fas fa-list"></i> Manage Blog Posts</h2>
+            <button id="refreshPostsBtn" class="btn-secondary">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
+          
+          <div class="filter-section">
+            <div class="search-wrapper">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchPosts" class="form-control" placeholder="Search posts by title, author, or tags..." />
+            </div>
+            <select id="filterStatus" class="form-control">
+              <option value="all">All Posts</option>
+              <option value="published">Published</option>
+              <option value="draft">Drafts</option>
+            </select>
+          </div>
+
+          <div id="postsTable" class="posts-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="postsTableBody">
+                <tr>
+                  <td colspan="6" class="loading-cell">
+                    <div class="loading-spinner-small"></div>
+                    <p>Loading posts...</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload Markdown Tab -->
+      <div id="markdownTab" class="tab-content">
+        <div class="upload-section" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="section-heading">
+            <i class="fas fa-file-code"></i> Upload Markdown File
+          </h2>
+          <p class="section-description">Upload a .md file and we'll convert it to a blog post automatically with full markdown support</p>
+          
+          <div class="upload-area" id="markdownDropZone">
+            <div class="upload-icon">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h3 class="upload-text">Drag & drop your .md file here</h3>
+            <p class="upload-subtext">or</p>
+            <button type="button" class="btn-primary" id="selectMarkdownBtn">
+              <i class="fas fa-folder-open"></i> Select File
+            </button>
+            <input type="file" id="markdownFile" accept=".md,.markdown" style="display: none;" />
+            <div class="upload-info">
+              <small><i class="fas fa-info-circle"></i> Supports images, videos, embeds, code blocks, and all markdown syntax</small>
+            </div>
+          </div>
+
+          <div id="markdownPreview" class="markdown-preview-section" style="display: none;">
+            <h3 class="preview-heading">
+              <i class="fas fa-eye"></i> Preview
+            </h3>
+            <div id="markdownContent" class="preview-content"></div>
+            
+            <div class="markdown-meta">
+              <h3><i class="fas fa-cog"></i> Post Information</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="mdAuthor">
+                    <i class="fas fa-user-edit"></i>
+                    Author
+                  </label>
+                  <input type="text" id="mdAuthor" class="form-control" placeholder="Author name" value="CodimAi Team" />
+                </div>
+                <div class="form-group">
+                  <label for="mdCategory">
+                    <i class="fas fa-folder"></i>
+                    Category
+                  </label>
+                  <select id="mdCategory" class="form-control">
+                    <option>AI Automation</option>
+                    <option>Machine Learning</option>
+                    <option>Business Growth</option>
+                    <option>Web Development</option>
+                    <option>SEO & Marketing</option>
+                    <option>Tutorial & Guide</option>
+                    <option>News & Updates</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="form-actions">
+                <button type="button" id="cancelMarkdownBtn" class="btn-secondary">
+                  <i class="fas fa-times"></i> Cancel
+                </button>
+                <button type="button" id="publishMarkdownBtn" class="btn-primary btn-lg">
+                  <i class="fas fa-paper-plane"></i> Publish from Markdown
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p id="loadingText">Processing...</p>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-eye"></i> Preview</h2>
+        <button class="modal-close" id="closePreviewBtn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="previewContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" style="display: none;">
+    <i class="toast-icon"></i>
+    <span class="toast-message"></span>
+  </div>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 50
+    });
+  </script>
+
+  <!-- Firebase Configuration (shared) -->
+  <script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+    // Keep single auth instance across admin pages
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = 'admin-login.html';
+      } else {
+        const emailSpan = document.querySelector('#userEmail span');
+        if (emailSpan) emailSpan.textContent = user.email;
+      }
+    });
+
+    // Logout handler
+    window.handleLogout = async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'admin-login.html';
+      } catch (error) {
+        console.error('Logout error:', error);
+        alert('Error logging out');
+      }
+    };
+  </script>
+
+  <!-- Admin Blog Builder JS -->
+  <script src="js/admin-blog.js" type="module"></script>
+  <script type="module" src="js/admin-blog-builder.js"></script>
+</body>
+</html>

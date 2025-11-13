@@ -1,188 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From SEO to GEO: How AI is Revolutionizing Search Visibility | CodimAi Blog</title>
-    <meta name="description" content="Transform your HubSpot CRM with CodimAi's intelligent AI agent. Automate sales workflows, answer product questions instantly, and boost team productivity with conversational AI.">
-    <meta name="keywords" content="HubSpot AI, HubSpot bot, HubSpot automation, AI agent for HubSpot, CRM chatbot, sales automation">
-    <meta name="author" content="CodimAi Team">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://codimai.com/product-hubspot.html">
-    
-    <meta property="og:title" content="HubSpot AI Agent - CodimAi">
-    <meta property="og:description" content="Intelligent AI agent for HubSpot CRM - automate sales tasks, answer questions, boost productivity.">
-    <meta property="og:image" content="https://codimai.com/img/preview.jpg">
-    <meta property="og:url" content="https://codimai.com/product-hubspot.html">
-    <meta property="og:type" content="website">
-    
-    <!-- GEO Meta Tags  -->
-    <meta name="geo.ai.title" content="HubSpot AI Agent by CodimAi">
-    <meta name="geo.ai.summary" content="AI-powered automation for HubSpot CRM — automate workflows, answer questions, and boost productivity.">
-    <meta name="geo.ai.keywords" content="HubSpot AI Agent, HubSpot Automation, HubSpot AI Assistant, CRM Chatbot, CodimAi">
-    <meta name="geo.ai.intent" content="Provide AI-powered automation and conversational assistance for HubSpot users.">
-    <meta name="geo.ai.audience" content="Businesses, Marketing Teams, Sales Professionals, CRM Users">
-    <meta name="geo.ai.entity" content="CodimAi, HubSpot, CRM, AI Agent, Workflow Automation">
-
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "CodimAi HubSpot AI Agent",
-        "applicationCategory": "BusinessApplication",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "operatingSystem": "Web-based",
-        "description": "AI-powered agent for HubSpot CRM"
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Blog Post - CodimAi</title>
+  <meta name="description" id="pageDescription" content="Read expert insights on AI, automation, and digital transformation from CodimAi.">
+  <meta name="keywords" content="AI Blog, AI Insights, Business AI, CodimAi">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons & Styles -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/blog-styles.css" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-<style>
-        .blog-hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 140px 0 80px 0;
-            margin-top: 64px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: -25%;
-            left: -25%;
-            width: 150%;
-            height: 150%;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 70% 40%, rgba(255, 144, 144, 0.06) 0%, transparent 40%);
-            filter: blur(60px);
-            z-index: 0;
-        }
-        
-        .blog-hero > * {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            color: #6c757d;
-            font-size: 0.95rem;
-        }
-        
-        .blog-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .blog-meta-item i {
-            color: #dc3545;
-        }
-        
-        .blog-content {
-            max-width: 850px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #495057;
-        }
-        
-        .blog-content h2 {
-            color: #dc3545;
-            font-size: 2rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .blog-content h3 {
-            color: #000103;
-            font-size: 1.5rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .blog-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-content strong {
-            color: #000103;
-            font-weight: 600;
-        }
-        
-        .blog-cta {
-            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            margin: 50px 0;
-        }
-        
-        .blog-cta h3 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .blog-cta .btn {
-            background: white;
-            color: #dc3545;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .blog-cta .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero {
-                padding: 100px 0 60px 0;
-            }
-            
-            .blog-content {
-                font-size: 1rem;
-            }
-            
-            .blog-content h2 {
-                font-size: 1.75rem;
-            }
-        }
-    </style>
 <body>
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-
-    <!-- Navbar Start -->
-     <nav class="navbar">
+<!-- Navbar-->
+    <nav class="navbar">
         <div class="navbar-left">
             <a href="index.html"><img src="img/CODIM logo web.webp" alt="CodimAi Logo" class="logo-image"></a>
         </div>
@@ -429,145 +274,87 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Blog Hero Start -->
-    <div class="blog-hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="display-3 text-dark mb-3 animated slideInDown">From SEO to GEO: How AI is Revolutionizing Search Visibility</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>November 5, 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <i class="fas fa-user"></i>
-                            <span>CodimAi Team</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <i class="fas fa-clock"></i>
-                            <span>6 min read</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog Hero End -->
-
-    <!-- Blog Content Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="blog-content">
-                        <p class="lead">The rules of online visibility are changing. For over two decades, businesses have invested heavily in Search Engine Optimization to climb Google rankings and drive organic traffic. But as artificial intelligence reshapes how people find information, a new paradigm is emerging: Generative Engine Optimization.</p>
-
-                        <h2>The Evolution Beyond Traditional Search</h2>
-                        <p>Traditional SEO has served businesses well, focusing on keywords, backlinks, and technical optimizations to secure prominent positions in search engine results pages. Users would see multiple results, click through to websites, and consume content on-site. This model created a clear path: optimize for search engines, earn rankings, generate traffic, and convert visitors.</p>
-
-                        <p><strong>GEO operates fundamentally differently.</strong> Instead of presenting a list of links, AI-powered platforms like ChatGPT, Perplexity, Google's AI Overviews, and other generative engines synthesize information from multiple sources and present direct, conversational answers. Your goal is no longer just to rank—it's to become a citation within these AI-generated responses.</p>
-
-                        <h3>Key Differences That Matter</h3>
-                        <p>The shift from SEO to GEO isn't merely technical—it represents a fundamental change in user behavior and content strategy. While SEO focuses on driving click-throughs to your website, GEO emphasizes becoming the authoritative source that AI models reference when answering user queries.</p>
-
-                        <p>Traditional SEO success metrics include organic traffic, keyword rankings, and click-through rates. GEO success, however, is measured by citation frequency, inclusion in AI responses, and accuracy of information representation. Where SEO demanded keyword-rich content designed to match search intent, GEO requires structured, scannable content that AI systems can easily interpret and synthesize.</p>
-
-                        <h2>Why GEO Matters for Modern Businesses</h2>
-                        <p>The implications are significant. Research indicates that 65% of marketers are already adapting their strategies to account for AI-generated search results, recognizing that users increasingly prefer instant answers over browsing multiple websites. This behavioral shift means businesses risk becoming invisible if their content isn't optimized for generative engines.</p>
-
-                        <p><strong>GEO isn't replacing SEO—it's complementing it.</strong> Smart businesses are implementing dual strategies that maintain traditional search visibility while ensuring their expertise is accessible to AI systems. This approach maximizes visibility across all search platforms and user preferences.</p>
-
-                        <h3>Implementing GEO Strategy</h3>
-                        <p>Successful GEO optimization requires rethinking content structure. Focus on creating factual, well-organized information with clear entity definitions and relationships. Implement comprehensive schema markup to help AI systems understand your content context. Develop content that directly answers specific questions with authoritative, citable information.</p>
-
-                        <p>The future of search visibility lies in becoming a trusted source for both human users and AI systems. Companies that master this dual optimization will dominate their industries, appearing consistently in traditional search results and AI-generated answers alike. As AI continues to evolve, the businesses that adapt fastest will capture the greatest share of online visibility and customer attention.</p>
-
-                        <div class="blog-cta">
-                            <h3><i class="fas fa-rocket me-3"></i>Ready to Optimize for the AI Era?</h3>
-                            <p>CodimAi helps businesses adapt to the changing search landscape with AI-powered solutions.</p>
-                            <a href="contact.html" class="btn">Get Started Today</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog Content End -->
-
-    <!-- Footer Start -->
-      <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-    <div class="container pt-5 pb-4">
-      <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
-          <a href="index.html">
-            <img src="img/short logo.webp" alt="CodimAI Logo" class="footer-logo">
-          </a>
-          <p class="mt-4 text-light">Everything About Ai</p>
-          <div class="d-flex hightech-link">
-            <a href="https://www.facebook.com/profile.php?id=61578209616406" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-facebook-f text-primary"></i></a>
-            <a href="https://twitter.com/codimai" target="_blank" rel="noopener noreferrer" title="Visit our Twitter page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-twitter text-primary"></i></a>
-            <a href="https://www.instagram.com/codim.ai/" target="_blank" rel="noopener noreferrer" title="Visit our Instagram page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-instagram text-primary"></i></a>
-            <a href="https://www.linkedin.com/in/shivam-gupta-089518308/" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
-                class="fab fa-linkedin-in text-primary"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <h3 class="text-danger">Short Link</h3>
-          <div class="mt-4 d-flex flex-column short-link">
-            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Contact
-              us</a>
-            <a href="solution-all.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Our
-              Services</a>
-            <a href="blog.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Blog</a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <h3 class="text-danger">Contact Us</h3>
-          <div class="text-white mt-4 d-flex flex-column contact-link">
-            <a href="#" class="pb-3 text-light border-bottom border-primary"><i
-                class="fas fa-map-marker-alt text-danger me-2"></i>Mumbai,India</a>
-            <a href="tel:+918369693412" class="py-3 text-light border-bottom border-primary"><i
-                class="fas fa-phone-alt text-danger me-2"></i>+91 83696 93412</a>
-            <a href="mailto:Support@codimai.com" class="py-3 text-light border-bottom border-primary"><i
-                class="fas fa-envelope text-danger me-2"></i>Support@codimai.com</a>
-          </div>
-        </div>
-      </div>
-      <hr class="text-light mt-5 mb-4">
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start">
-          <span class="text-light"><a href="#" class="text-danger"><i
-                class="fas fa-copyright text-danger me-2"></i>codimai</a>, All right reserved.</span>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-        </div>
-      </div>
-    </div>
+    
+  <!-- Spinner -->
+  <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
   </div>
-    <!-- Footer End -->
+
+  <!-- Blog Post Content -->
+   <main class="blog-post-main" style="margin-top: 90px;">
+      <div class="blog-post-container">
+      <a href="blog.html" class="back-to-blog" data-aos="fade-right">
+        <i class="fas fa-arrow-left"></i> Back to Blog
+      </a>
+      <div id="blogPostContainer" data-aos="fade-up" data-aos-delay="200">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+  </main>
+
+      <!-- Footer -->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html">
+                        <img src="img/short logo.webp" alt="CodimAI Logo" class="footer-logo">
+                    </a>
+                    <p class="mt-4 text-light">Everything About Ai</p>
+                    <div class="d-flex hightech-link">
+                        <a href="https://www.facebook.com/profile.php?id=61578209616406" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="https://twitter.com/codimai" target="_blank" rel="noopener noreferrer" title="Visit our Twitter page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="https://www.instagram.com/codim.ai/" target="_blank" rel="noopener noreferrer" title="Visit our Instagram page" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="https://www.linkedin.com/in/shivam-gupta-089518308/" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="text-danger">Short Link</h3>
+                    <div class="mt-4 d-flex flex-column short-link">
+              <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Contact us</a>
+              <a href="solution-all.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Our Services</a>
+              <a href="blog.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Blog</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="text-danger">Contact Us</h3>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-danger me-2"></i>Mumbai,India</a>
+                        <a href="tel:+918369693412" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-danger me-2"></i>+91 83696 93412</a>
+                        <a href="mailto:Support@codimai.com" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-danger me-2"></i>Support@codimai.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-light"><a href="#" class="text-danger"><i class="fas fa-copyright text-danger me-2"></i>codimai</a>, All right reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <a href="#" title="Back to top" class="btn btn-danger btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
 
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script src="js/main.js"></script>
     <script src="js/app.js"></script>
+    <script type="module" src="js/blog-post.js"></script>
+    
 </body>
 
 </html>
-

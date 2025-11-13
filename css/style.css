@@ -3673,3 +3673,200 @@ img.lazy-load.loaded {
     gap: 12px;
   }
 }
+
+
+.admin-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.admin-toggle-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(220, 53, 69, 0.5);
+}
+
+.admin-editor-section {
+    background: #f8f9fa;
+    border-bottom: 3px solid #dc3545;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.editor-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f3f5;
+}
+
+.editor-card h2 {
+    color: #dc3545;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logout-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+}
+
+.editor-content {
+    min-height: 500px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+}
+
+.editor-content:focus-within {
+    border-color: #dc3545;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    justify-content: flex-end;
+}
+
+.form-actions .btn {
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-actions .btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.form-actions .btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.form-actions .btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+.form-actions .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Quill Editor Customization */
+.ql-toolbar {
+    background: #f8f9fa;
+    border-radius: 10px 10px 0 0 !important;
+    border: none !important;
+    padding: 15px !important;
+}
+
+.ql-container {
+    border: none !important;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.ql-editor {
+    min-height: 500px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .admin-toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+    
+    .editor-card {
+        padding: 25px;
+    }
+    
+    .editor-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+}
