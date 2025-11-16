@@ -1,126 +1,5 @@
 /* Stats Section - Minimalistic Material Design with Navbar Palette */
-/* Uses existing palette: var(--primary-red #F44336), var(--primary-red-dark #D32F2F), var(--dark #212121), var(--white #FFFFFF), var(--gray-light #E0E0E0), var(--gray-medium #9E9E9E) */
 
-.stats-section {
-  background: var(--primary-red);
-  padding: 1.5rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.stats-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
-  animation: shimmer 3s infinite;
-  z-index: 1;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.stat-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.stat-counter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0.5rem;
-  color: var(--white);
-  transition: transform var(--transition-medium);
-}
-
-.stat-counter:hover {
-  transform: scale(1.05);
-}
-
-.counter-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 0.25rem 0;
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  animation: countUp 2s ease-out forwards;
-}
-
-.stat-counter h5 {
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0;
-  color: var(--white);
-  opacity: 0.9;
-  line-height: 1.4;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: var(--delay, 0s);
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes countUp {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-  
-  .counter-value {
-    font-size: 2rem;
-  }
-  
-  .stat-counter h5 {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stats-section {
-    padding: 1rem 0;
-  }
-}
 /* 2025 Ultra-Modern Integrations Showcase – Zero Issues, Pure Magic */
 .integrations-showcase {
   padding: 8rem 0;
@@ -276,12 +155,22 @@
 /* Intelligent Automation Platform Section – Premium 2025 Design */
 .automation-platform-section {
   padding: 8rem 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(135deg, #0a0a12 0%, #1a0b2e 50%, #0f0617 100%);
   color: var(--white);
   position: relative;
   overflow: hidden;
 }
 
+.automation-platform-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(244,67,54,0.18) 0%, transparent 60%);
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* keep the rest same */
 .automation-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -1448,171 +1337,5 @@
     padding: 1.1rem;
     font-size: 1rem;
   }
-}
-/* FAQ Section – 2025 Ultra-Premium Dark + Red Glow (No Bootstrap) */
-.faq-section {
-  padding: 10rem 0;
-  background: linear-gradient(135deg, #0a0a12 0%, #1a0b2e 50%, #0f0617 100%);
-  position: relative;
-  overflow: hidden;
-  color: white;
-}
-
-.faq-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(244,67,54,0.15) 0%, transparent 60%);
-  pointer-events: none;
-  animation: pulseGlow 10s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; }
-  50%      { opacity: 0.7; }
-}
-
-.faq-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.faq-header {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.section-badge {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: var(--primary-red);
-  margin-bottom: 1rem;
-}
-
-.faq-title {
-  font-size: clamp(3rem, 6.5vw, 5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.gradient-fire {
-  background: linear-gradient(135deg, #ff3366, var(--primary-red), #ff1a1a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 40px rgba(244,67,54,0.4);
-}
-
-/* Accordion */
-.faq-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-item {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(244, 67, 54, 0.25);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.faq-item:hover {
-  border-color: var(--primary-red);
-  box-shadow: 0 20px 40px rgba(244,67,54,0.15);
-  transform: translateY(-4px);
-}
-
-.faq-question {
-  padding: 1.8rem 2rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.faq-question h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0;
-  color: white;
-  pr: 3rem;
-  transition: color 0.4s;
-}
-
-.faq-toggle {
-  width: 50px;
-  height: 50px;
-  background: rgba(244,67,54,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s;
-  flex-shrink: 0;
-}
-
-.faq-toggle i {
-  font-size: 1.2rem;
-  transition: transform 0.4s;
-}
-
-.faq-item.active .faq-toggle i {
-  transform: rotate(180deg);
-}
-
-.faq-item.active .faq-toggle {
-  background: var(--primary-red);
-  box-shadow: 0 0 30px rgba(244,67,54,0.5);
-}
-
-.faq-item.active .faq-question h3 {
-  color: var(--primary-red);
-}
-
-/* Answer */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.6s;
-  padding: 0 2rem;
-}
-
-.faq-answer p {
-  padding: 0 0 2rem;
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e0e0e0;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 200px;
-  padding: 0 2rem 2rem;
-}
-
-/* Active glow line */
-.faq-item::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 4px;
-  height: 0;
-  background: var(--primary-red);
-  transition: height 0.6s;
-}
-
-.faq-item.active::before {
-  height: 100%;
 }
 
