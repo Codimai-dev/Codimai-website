@@ -10,61 +10,65 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/blog-admin.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/admin-login.css">
 </head>
-<body style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif;">
-  <div style="width: 100%; max-width: 450px; background: white; border-radius: 20px; padding: 3rem 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideUp 0.6s ease;">
-    <div style="text-align: center; margin-bottom: 2.5rem;">
-      <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 8px 20px rgba(220,53,69,0.3); background: transparent;">
-        <img src="img/CODIM logo web.webp" alt="CodimAi Logo" style="width: 72px; height: 72px; object-fit:contain; border-radius: 14px;" />
+<body>
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-header">
+      <div class="login-logo">
+        <img src="img/CODIM logo web.webp" alt="CodimAi Logo">
       </div>
-      <h1 style="font-size: 2rem; font-weight: 800; color: #2d3748; font-family: 'Saira', sans-serif; margin-bottom: 0.5rem;">Admin Login</h1>
-      <p style="color: #6c757d; font-size: 0.95rem;">Enter your credentials to access the admin panel</p>
+      <h1>Admin Login</h1>
+      <p>Enter your credentials to access the admin panel</p>
     </div>
-    
-    <div id="errorMessage" style="background: #f8d7da; color: #721c24; padding: 1rem 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; display: none; align-items: center; gap: 0.625rem; border-left: 4px solid #dc3545;">
+
+    <div id="errorMessage">
       <i class="fas fa-exclamation-circle"></i>
       <span id="errorText">Invalid credentials</span>
     </div>
 
     <form id="loginForm">
-      <div style="margin-bottom: 1.75rem;">
-        <label style="display: block; margin-bottom: 0.625rem; font-weight: 600; color: #2d3748; font-size: 0.95rem;">
-          <i class="fas fa-envelope" style="color: #dc3545; margin-right: 0.5rem;"></i>
+
+      <div class="form-group">
+        <label class="form-label">
+          <i class="fas fa-envelope" style="color:#dc3545;margin-right:8px;"></i>
           Email Address
         </label>
-        <div style="position: relative;">
-          <i class="fas fa-envelope" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: #6c757d;"></i>
-          <input type="email" id="loginEmail" required autocomplete="email" placeholder="admin@codimai.com" 
-            style="width: 100%; padding: 0.875rem 1.25rem 0.875rem 3.5rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; background: #f8f9fa; font-family: 'Inter', sans-serif;" />
+        <div class="input-icon-box">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="loginEmail" class="form-input" placeholder="admin@codimai.com" required>
         </div>
       </div>
 
-      <div style="margin-bottom: 1.75rem;">
-        <label style="display: block; margin-bottom: 0.625rem; font-weight: 600; color: #2d3748; font-size: 0.95rem;">
-          <i class="fas fa-lock" style="color: #dc3545; margin-right: 0.5rem;"></i>
+      <div class="form-group">
+        <label class="form-label">
+          <i class="fas fa-lock" style="color:#dc3545;margin-right:8px;"></i>
           Password
         </label>
-        <div style="position: relative;">
-          <i class="fas fa-lock" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: #6c757d;"></i>
-          <input type="password" id="loginPassword" required autocomplete="current-password" placeholder="••••••••" 
-            style="width: 100%; padding: 0.875rem 1.25rem 0.875rem 3.5rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; background: #f8f9fa; font-family: 'Inter', sans-serif;" />
+        <div class="input-icon-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
         </div>
       </div>
 
-      <button type="submit" id="loginBtn" class="btn-primary" style="width: 100%; margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.625rem;">
+      <button type="submit" id="loginBtn" class="btn-primary">
         <i class="fas fa-sign-in-alt"></i>
         <span>Sign In</span>
       </button>
     </form>
 
-    <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #f0f0f0;">
-      <a href="index.html" style="color: #dc3545; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+    <div class="back-link">
+      <a href="index.html">
         <i class="fas fa-arrow-left"></i>
         Back to Website
       </a>
     </div>
+
   </div>
+</div>
 
   <script type="module">
     import { auth } from './js/firebase-config.js';

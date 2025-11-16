@@ -1,0 +1,723 @@
+/* DISCORD FEATURES SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.features-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.3s; }
+.feature-card:nth-child(3) { animation-delay: 0.5s; }
+.feature-card:nth-child(4) { animation-delay: 0.1s; }
+.feature-card:nth-child(5) { animation-delay: 0.3s; }
+.feature-card:nth-child(6) { animation-delay: 0.5s; }
+
+.feature-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.feature-card p {
+  color: var(--gray-medium);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+/* DISCORD USE CASES SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.use-cases-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.use-cases-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.use-cases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Use Cases Grid */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.use-case-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.use-case-card:nth-child(1) { animation-delay: 0.1s; }
+.use-case-card:nth-child(2) { animation-delay: 0.3s; }
+.use-case-card:nth-child(3) { animation-delay: 0.5s; }
+.use-case-card:nth-child(4) { animation-delay: 0.7s; }
+
+.use-case-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.card-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-red);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.use-case-card:hover .card-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.card-content p {
+  color: var(--gray-medium);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-medium);
+  margin-bottom: 0.5rem;
+}
+
+.feature-list i {
+  color: #4CAF50;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .use-cases-grid {
+    gap: 1.5rem;
+  }
+}
+/* HOW IT WORKS SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.how-it-works-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.how-it-works-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.step-item {
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.step-item:nth-child(1) { animation-delay: 0.1s; }
+.step-item:nth-child(2) { animation-delay: 0.3s; }
+.step-item:nth-child(3) { animation-delay: 0.5s; }
+
+.step-item:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: var(--primary-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(244,67,54,0.5);
+}
+
+.step-content h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.step-content p {
+  color: var(--gray-medium);
+  line-height: 1.7;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Video Placeholder */
+.video-placeholder {
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+  border: 1px solid rgba(244,67,54,0.25);
+}
+
+.video-placeholder i {
+  font-size: 6rem;
+  color: var(--gray-medium);
+  margin-bottom: 1rem;
+}
+
+.video-placeholder p {
+  color: var(--gray-medium);
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-placeholder {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 6rem 0;
+  }
+  .step-item {
+    padding: 2rem;
+  }
+}
+/* BOOST TEAM, SEAMLESSNESS, CAPABILITY, SMART DELEGATION, CTA – CodimAI 2025 Dark + Red */
+.boost-team-section, .seamlessness-section, .capability-section, .smart-delegation-section, .cta-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.boost-team-section::before, .seamlessness-section::before, .capability-section::before, .smart-delegation-section::before, .cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Containers */
+.boost-team-container, .seamlessness-container, .capability-container, .smart-delegation-container, .cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Boost Team */
+.boost-team-container .section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.boost-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.boost-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.boost-card:nth-child(1) { animation-delay: 0.1s; }
+.boost-card:nth-child(2) { animation-delay: 0.3s; }
+.boost-card:nth-child(3) { animation-delay: 0.5s; }
+
+.boost-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.boost-card .card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.boost-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.boost-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.boost-card p {
+  color: var(--gray-medium);
+  line-height: 1.7;
+}
+
+/* Seamlessness */
+.seamlessness-container .row-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.placeholder-wrapper {
+  height: 400px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(244,67,54,0.25);
+}
+
+.placeholder-image {
+  text-align: center;
+  font-size: 6rem;
+  color: var(--gray-medium);
+  margin-bottom: 1rem;
+}
+
+.placeholder-image p {
+  color: var(--gray-medium);
+  font-size: 1.2rem;
+}
+
+.seamlessness-content {
+  text-align: center;
+}
+
+.seamlessness-content .section-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.icon-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-item:hover {
+  transform: scale(1.1);
+  background: var(--primary-red);
+}
+
+/* Capability */
+.capability-container .row-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.capability-content {
+  text-align: center;
+}
+
+.capability-content .section-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.4s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(244,67,54,0.5);
+}
+
+/* Smart Delegation */
+.smart-delegation-container .row-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.smart-delegation-content {
+  text-align: center;
+}
+
+.smart-delegation-content .section-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.check-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-medium);
+}
+
+.check-item i {
+  color: #4CAF50;
+  font-size: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.cta-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+}
+
+.cta-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.cta-btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s;
+  box-shadow: 0 15px 40px rgba(244,67,54,0.5);
+}
+
+.cta-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(244,67,54,0.6);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .row-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  .check-list {
+    grid-template-columns: 1fr;
+  }
+  .icons-row {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .boost-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-title {
+    font-size: 3rem;
+  }
+}

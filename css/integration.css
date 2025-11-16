@@ -1,0 +1,199 @@
+/* SLACK INTEGRATION PAGE – CodimAI 2025 Dark + Red Cosmic Theme */
+.hero-slack {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0a12 0%, #1a0b2e 50%, #0f0617 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-slack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.slack-logo {
+  width: 120px;
+  height: 120px;
+  filter: brightness(1.2);
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 2rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.hero-heading {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-subheading {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-demo {
+  background: var(--primary-red);
+  color: white;
+  box-shadow: 0 10px 30px rgba(244,67,54,0.4);
+}
+
+.btn-demo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.5);
+  color: white;
+}
+
+.btn-get-started {
+  background: transparent;
+  color: white;
+  border: 2px solid var(--primary-red);
+}
+
+.btn-get-started:hover {
+  background: var(--primary-red);
+  transform: translateY(-6px);
+    color: white;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Search & Grid Section */
+.search-and-grid-section {
+  padding: 6rem 0;
+  background: rgba(255,255,255,0.02);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  position: relative;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 1.2rem 1.5rem 1.2rem 3rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(244,67,54,0.3);
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.4s;
+}
+
+#searchInput::placeholder {
+  color: var(--gray-medium);
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 20px rgba(244,67,54,0.3);
+}
+
+.search-container::before {
+  content: '🔍';
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-medium);
+}
+
+#appGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(244,67,54,0.3);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pagination button:hover,
+.pagination button.active {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 280px;
+    justify-content: center;
+  }
+  #appGrid {
+    grid-template-columns: 1fr;
+  }
+}
