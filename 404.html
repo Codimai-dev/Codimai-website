@@ -8,136 +8,75 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-        }
-        .error-container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-        }
-        .error-code {
-            font-size: 150px;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 1rem;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .error-icon {
-            font-size: 80px;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        .error-title {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .error-message {
-            font-size: 18px;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        .btn-home {
-            display: inline-block;
-            padding: 14px 40px;
-            background: #fff;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .btn-home:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #f8f9fa;
-        }
-        .btn-home i {
-            margin-right: 8px;
-        }
-        .suggestions {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .suggestions h3 {
-            font-size: 20px;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-        .suggestions ul {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .suggestions a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .suggestions a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        @media (max-width: 768px) {
-            .error-code {
-                font-size: 100px;
-            }
-            .error-title {
-                font-size: 24px;
-            }
-            .error-message {
-                font-size: 16px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/404.css">
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-icon">
-            <i class="fas fa-robot"></i>
-        </div>
-        <div class="error-code">404</div>
-        <h1 class="error-title">Oops! Page Not Found</h1>
-        <p class="error-message">
-            The page you're looking for seems to have wandered off into the digital void. 
-            Even our AI couldn't locate it! Let's get you back on track.
-        </p>
-        <a href="index.html" class="btn-home">
-            <i class="fas fa-home"></i>Back to Home
-        </a>
-        
-        <div class="suggestions">
-            <h3>Popular Pages</h3>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+<section class="error-404-section">
+  <!-- Animated Background -->
+  <div class="error-bg">
+    <div class="glitch-layers">
+      <div class="glitch glitch-1"></div>
+      <div class="glitch glitch-2"></div>
+      <div class="glitch glitch-3"></div>
     </div>
+    <div class="floating-robot">
+      <i class="fas fa-robot"></i>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="error-container">
+    <div class="error-content">
+      <!-- 404 Code with Glitch Effect -->
+      <h1 class="error-code glitch-text" data-text="404">404</h1>
+
+      <!-- Robot Icon with Floating Animation -->
+      <div class="error-robot">
+        <i class="fas fa-robot"></i>
+      </div>
+
+      <!-- Title & Message -->
+      <h2 class="error-title">
+        Oops! This Page Got Lost in the <span class="gradient-fire">Matrix</span>
+      </h2>
+      <p class="error-message">
+        Even our smartest AI agents couldn't find this page.<br>
+        Don't worry — even robots get lost sometimes!
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="error-actions">
+        <a href="index.html" class="btn-primary">
+          <i class="fas fa-home"></i>
+          Back to Home
+          <span class="btn-glow"></span>
+        </a>
+        <a href="contact.html" class="btn-secondary">
+          Need Help? Contact Us
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links">
+        <p>Or explore these popular pages:</p>
+        <div class="links-grid">
+          <a href="index.html">Home</a>
+          <a href="solution-all.html">Solutions</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <!-- Fun Easter Egg -->
+      <div class="easter-egg">
+        <p>Psst... try typing <kbd>codimai</kbd> for a surprise</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="./js/404.js
+"></script>
 </body>
 </html>
 
