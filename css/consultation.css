@@ -1,0 +1,174 @@
+/* PARTNERSHIP TIERS SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.partnership-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.partnership-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.partnership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Partnership Grid */
+.partnership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.partnership-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.partnership-card:nth-child(1) { animation-delay: 0.1s; }
+.partnership-card:nth-child(2) { animation-delay: 0.3s; }
+.partnership-card:nth-child(3) { animation-delay: 0.5s; }
+
+.partnership-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.partnership-card.featured {
+  border: 2px solid var(--primary-red);
+  box-shadow: 0 0 0 0.5rem rgba(244,67,54,0.1);
+  position: relative;
+}
+
+.partnership-card.featured::before {
+  content: 'RECOMMENDED';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-red);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.partnership-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.revenue-share {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--primary-red);
+  line-height: 1;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-medium);
+  margin-bottom: 0.8rem;
+}
+
+.feature-list i {
+  color: var(--primary-red);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .partnership-grid {
+    grid-template-columns: 1fr;
+  }
+  .partnership-card.featured::before {
+    top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partnership-section {
+    padding: 6rem 0;
+  }
+}

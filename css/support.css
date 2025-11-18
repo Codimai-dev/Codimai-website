@@ -1,0 +1,223 @@
+/* UNIFIED SUPPORT & INTELLIGENCE SECTIONS – CodimAI 2025 Dark + Red Cosmic Theme */
+.unified-support-section, .intelligence-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-support-section::before, .intelligence-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Containers */
+.unified-support-container, .intelligence-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Row Wrapper */
+.row-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Placeholder */
+.placeholder-wrapper {
+  height: 400px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(244,67,54,0.25);
+}
+
+.placeholder-image {
+  text-align: center;
+  font-size: 6rem;
+  color: var(--gray-medium);
+  margin-bottom: 1rem;
+}
+
+.placeholder-image p {
+  color: var(--gray-medium);
+  font-size: 1.2rem;
+}
+
+/* Unified Content */
+.unified-content {
+  text-align: center;
+}
+
+.unified-content .section-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.unified-content .section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.unified-content .section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.icon-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-item:hover {
+  transform: scale(1.1);
+  background: var(--primary-red);
+}
+
+/* Intelligence Content */
+.intelligence-content {
+  text-align: center;
+}
+
+.intelligence-content .section-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.intelligence-content .section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.intelligence-content .section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.intelligence-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gray-medium);
+  font-size: 1.1rem;
+}
+
+.feature-item i {
+  color: var(--primary-red);
+  font-size: 1.2rem;
+  min-width: 24px;
+}
+
+/* CTA */
+.cta-container .row-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.cta-text {
+  flex: 1;
+}
+
+.cta-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.cta-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.cta-button {
+  flex-shrink: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.cta-btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.4s;
+  box-shadow: 0 15px 40px rgba(244,67,54,0.5);
+}
+
+.cta-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(244,67,54,0.6);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .row-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .intelligence-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+}

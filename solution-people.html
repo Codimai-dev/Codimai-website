@@ -25,129 +25,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <style>
-        .hero-people {
-            padding: 75px 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: linear-gradient(45deg, #000000, #160000, #111, #2b0000);
-            animation: gradientAnimation 20s ease-in-out infinite;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .hero-people .hero-heading {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-people .hero-subheading {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Re-usable product scroller styles (from product-teams) */
-        .bs-btn-logo {
-            display: flex;
-            width: fit-content;
-            flex-wrap: nowrap;
-            animation: scroll 60s linear infinite;
-            margin-bottom: 1.5rem;
-        }
-        .bs-btn-logo:hover {
-            animation-play-state: paused;
-        }
-        .bs-btn-logo.typrevrse {
-            animation: scroll-reverse 60s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
-        }
-        @keyframes scroll-reverse {
-            0% { transform: translate3d(-50%, 0, 0); }
-            100% { transform: translate3d(0, 0, 0); }
-        }
-        .btn-design {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: auto;
-            padding: 14px 32px;
-            margin: 0 20px;
-            border-radius: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            color: #ffffff;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 500;
-            white-space: nowrap;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            cursor: pointer;
-        }
-        .btn-design:hover {
-            transform: scale(1.05);
-            background-color: rgba(74, 21, 75, 0.75);
-            border-color: rgba(74, 21, 75, 1);
-        }
-        .btn-design.typ-logo {
-            padding: 0;
-            border-radius: 50%;
-            width: 72px;
-            height: 72px;
-        }
-        .btn-design.typ-logo svg,
-        .btn-design.typ-logo img {
-            width: 32px;
-            height: 32px;
-        }
-        .hero-cta-buttons {
-            margin-top: 3rem;
-        }
-        .hero-cta-buttons .btn {
-            margin: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            .hero-people {
-                padding: 50px 0;
-            }
-            .btn-design {
-                padding: 10px 24px;
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-            .btn-design.typ-logo {
-                width: 58px;
-                height: 58px;
-            }
-            .btn-design.typ-logo img {
-                width: 24px;
-                height: 24px;
-            }
-        }
-        </style>
+<link href="css/discord.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+       <link href="css/solution-account.css" rel="stylesheet">
 </head>
 
 <body>
@@ -156,267 +36,183 @@
         </div>
 
         <!-- Navbar Start -->
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="index.html"><img src="img/CODIM logo web.webp" alt="CodimAi Logo" class="logo-image"></a>
+   <nav class="navbar">
+  <div class="navbar-left">
+    <a href="index.html"><img src="img/CODIM logo web.webp" alt="CodimAi Logo" class="logo-image"></a>
+  </div>
+  
+  <div class="navbar-right">
+    <button class="hamburger-menu" aria-label="Toggle navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Desktop nav links -->
+    <ul class="nav-links desktop-nav">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown product-dropdown">
+        <a href="#" class="nav-link active">Product <span class="arrow" aria-hidden="true">
+          <i class="fas fa-chevron-down"></i>
+        </span></a>
+        <div class="product-menu">
+          <div class="menu-heading">
+            <h3>AI Agents for Your Workspace</h3>
+          </div>
+          <a href="product-slack.html" class="product-item">
+            <img src="https://cdn.simpleicons.org/slack/f44336" alt="Slack Icon" class="item-icon">
+            <div class="item-text">
+              <h3>Slack</h3>
+            </div>
+          </a>
+          <a href="product-teams.html" class="product-item">
+            <img src="https://cdn.simpleicons.org/microsoft-teams/f44336" alt="Microsoft Teams Icon" class="item-icon" onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/microsoft-teams-2019.png';this.style.filter='hue-rotate(0deg) saturate(100%) brightness(0) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)';">
+            <div class="item-text">
+              <h3>Microsoft Teams</h3>
+            </div>
+          </a>
+          <a href="product-hubspot.html" class="product-item">
+            <img src="https://cdn.simpleicons.org/hubspot/f44336" alt="HubSpot Icon" class="item-icon">
+            <div class="item-text">
+              <h3>HubSpot</h3>
+            </div>
+          </a>
+          <a href="product-zendesk.html" class="product-item">
+            <img src="https://cdn.simpleicons.org/zendesk/f44336" alt="Zendesk Icon" class="item-icon">
+            <div class="item-text">
+              <h3>Zendesk</h3>
+            </div>
+          </a>
+          <a href="product-discord.html" class="product-item">
+            <img src="https://cdn.simpleicons.org/discord/f44336" alt="Discord Icon" class="item-icon">
+            <div class="item-text">
+              <h3>Discord</h3>
+            </div>
+          </a>
+          <a href="integration.html" class="product-item integrations-link">
+            <div class="item-text">
+              <h3>Integrations</h3>
+            </div>
+            <span class="item-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          </a>
         </div>
-        
-        <div class="navbar-right">
-                    <button class="hamburger-menu" aria-label="Toggle navigation menu">
-                        <i class='bx bx-menu' aria-hidden="true"></i>
-                    </button>
-            
-            <!-- Desktop nav links -->
-        <ul class="nav-links desktop-nav">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item dropdown product-dropdown">
-            <a href="#" class="nav-link active">Product <span class="arrow" aria-hidden="true"><svg width="10" height="6"
-                  viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0.64645 0.646447C0.451184 0.841709 0.451184 1.15829 0.64645 1.35355L4.29289 5L4.29289 5C4.48816 5.19526 4.80474 5.19526 5.00001 5L8.64645 1.35355C8.84171 1.15829 8.84171 0.841709 8.64645 0.646447C8.45118 0.451184 8.1346 0.451184 7.93934 0.646447L5.00001 3.58579L2.06068 0.646447C1.86542 0.451184 1.54884 0.451184 1.35358 0.646447L0.64645 0.646447Z"
-                    fill="#6c757d" />
-                </svg></span></a>
-            <div class="product-menu">
-              <div class="menu-heading">
-                <h3>AI Agents for Your Workspace</h3>
-              </div>
-              <a href="product-slack.html" class="product-item">
-                <img src="https://cdn.simpleicons.org/slack/6c757d" alt="Slack Icon" class="item-icon">
-                <div class="item-text">
-                  <h3>Slack</h3>
-                </div>
-              </a>
-              <a href="product-teams.html" class="product-item">
-                <img src="https://cdn.simpleicons.org/microsoft-teams/6c757d" alt="Microsoft Teams Icon" class="item-icon"
-                  onerror="this.onerror=null;this.src='https://img.icons8.com/fluency/48/microsoft-teams-2019.png'">
-                <div class="item-text">
-                  <h3>Microsoft Teams</h3>
-                </div>
-              </a>
-              <a href="product-hubspot.html" class="product-item">
-                <img src="https://cdn.simpleicons.org/hubspot/6c757d" alt="HubSpot Icon" class="item-icon">
-                <div class="item-text">
-                  <h3>HubSpot</h3>
-                </div>
-              </a>
-              <a href="product-zendesk.html" class="product-item">
-                <img src="https://cdn.simpleicons.org/zendesk/6c757d" alt="Zendesk Icon" class="item-icon">
-                <div class="item-text">
-                  <h3>Zendesk</h3>
-                </div>
-              </a>
-              <a href="product-discord.html" class="product-item">
-                <img src="https://cdn.simpleicons.org/discord/6c757d" alt="Discord Icon" class="item-icon">
-                <div class="item-text">
-                  <h3>Discord</h3>
-                </div>
-              </a>
-              <a href="integration.html" class="product-item integrations-link">
-                <div class="item-text">
-                  <h3>Integrations</h3>
-                </div>
-                <span class="item-arrow" aria-hidden="true">&#8250;</span>
-              </a>
+      </li>
+      <li class="nav-item dropdown solutions-dropdown">
+        <a href="#" class="nav-link">Solutions <span class="arrow" aria-hidden="true">
+          <i class="fas fa-chevron-down"></i>
+        </span></a>
+        <div class="solutions-menu">
+          <a href="solution-support.html" class="solution-item">
+            <i class="fas fa-headset item-icon"></i>
+            <div class="item-text">
+              <h3>Support Team</h3>
             </div>
-          </li>
-          <li class="nav-item dropdown solutions-dropdown">
-            <a href="#" class="nav-link">Solutions <span class="arrow" aria-hidden="true"><svg width="10" height="6"
-                  viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0.64645 0.646447C0.451184 0.841709 0.451184 1.15829 0.64645 1.35355L4.29289 5L4.29289 5C4.48816 5.19526 4.80474 5.19526 5.00001 5L8.64645 1.35355C8.84171 1.15829 8.84171 0.841709 8.64645 0.646447C8.45118 0.451184 8.1346 0.451184 7.93934 0.646447L5.00001 3.58579L2.06068 0.646447C1.86542 0.451184 1.54884 0.451184 1.35358 0.646447L0.64645 0.646447Z"
-                    fill="#6c757d" />
-                </svg></span></a>
-            <div class="solutions-menu">
-              <a href="solution-support.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-headset size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path
-                    d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z">
-                  </path>
-                  <path d="M21 16v2a4 4 0 0 1-4 4h-5"></path>
-                </svg>
-                <div class="item-text">
-                  <h3>Support Team</h3>
-                  <!-- <p>Empower team to quickly find answers with AI.</p> -->
-                </div>
-              </a>
-              <a href="solution-sales.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-handshake size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
-                  <path
-                    d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4">
-                  </path>
-                  <path d="m21 3 1 11h-2"></path>
-                  <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
-                  <path d="M3 4h8"></path>
-                </svg>
-                <div class="item-text">
-                  <h3>Sales Team</h3>
-                  <!-- <p>Build your AI agents for sales enablement.</p> -->
-                </div>
-              </a>
-              <a href="solution-marketing.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-chart-no-axes-column-increasing size-6 grayscale" aria-hidden="true"
-                  focusable="false">
-                  <line x1="12" x2="12" y1="20" y2="10"></line>
-                  <line x1="18" x2="18" y1="20" y2="4"></line>
-                  <line x1="6" x2="6" y1="20" y2="16"></line>
-                </svg>
-                <div class="item-text">
-                  <h3>Marketing Team</h3>
-                  <!-- <p>Track visitors, monitor campaigns, and share reports with AI.</p> -->
-                </div>
-              </a>
-              <a href="solution-people.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-users size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                </svg>
-                <div class="item-text">
-                  <h3>HR Team</h3>
-                  <!-- <p>Empower HR team to create AI agents.</p> -->
-                </div>
-              </a>
-              <a href="solution-finance.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-hand-coins size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"></path>
-                  <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9">
-                  </path>
-                  <path d="m2 16 6 6"></path>
-                  <circle cx="16" cy="9" r="2.9"></circle>
-                  <circle cx="6" cy="5" r="3"></circle>
-                </svg>
-                <div class="item-text">
-                  <h3>Finance Team</h3>
-                  <!-- <p>Build your AI agents to manage money and maximize value.</p> -->
-                </div>
-              </a>
-              <a href="solution-account.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-notebook-tabs size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path d="M2 6h4"></path>
-                  <path d="M2 10h4"></path>
-                  <path d="M2 14h4"></path>
-                  <path d="M2 18h4"></path>
-                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
-                  <path d="M15 2v20"></path>
-                  <path d="M15 7h5"></path>
-                  <path d="M15 12h5"></path>
-                  <path d="M15 17h5"></path>
-                </svg>
-                <div class="item-text">
-                  <h3>Account Manager</h3>
-                  <!-- <p>Deepen your B2B relationships with AI agents.</p> -->
-                </div>
-              </a>
-              <a href="solution-executive.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-pen-tool size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path
-                    d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z">
-                  </path>
-                  <path
-                    d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18">
-                  </path>
-                  <path d="m2.3 2.3 7.286 7.286"></path>
-                  <circle cx="11" cy="11" r="2"></circle>
-                </svg>
-                <div class="item-text">
-                  <h3>Executive Team</h3>
-                  <!-- <p>Transform business oversight into insight with AI agents.</p> -->
-                </div>
-              </a>
-              <a href="solution-consultancies.html" class="solution-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="item-icon lucide lucide-presentation size-6 grayscale" aria-hidden="true" focusable="false">
-                  <path d="M2 3h20"></path>
-                  <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
-                  <path d="m7 21 5-5 5 5"></path>
-                </svg>
-                <div class="item-text">
-                  <h3>AI Consultancies</h3>
-                  <!-- <p>Deliver AI solutions that your clients will love.</p> -->
-                </div>
-              </a>
+          </a>
+          <a href="solution-sales.html" class="solution-item">
+            <i class="fas fa-handshake item-icon"></i>
+            <div class="item-text">
+              <h3>Sales Team</h3>
             </div>
-          </li>
-          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-        </ul>
-        <a href="contact.html" class="get-started-btn">Get Started</a>
-      </div>
+          </a>
+          <a href="solution-marketing.html" class="solution-item">
+            <i class="fas fa-chart-line item-icon"></i>
+            <div class="item-text">
+              <h3>Marketing Team</h3>
+            </div>
+          </a>
+          <a href="solution-people.html" class="solution-item">
+            <i class="fas fa-users item-icon"></i>
+            <div class="item-text">
+              <h3>HR Team</h3>
+            </div>
+          </a>
+          <a href="solution-finance.html" class="solution-item">
+            <i class="fas fa-coins item-icon"></i>
+            <div class="item-text">
+              <h3>Finance Team</h3>
+            </div>
+          </a>
+          <a href="solution-account.html" class="solution-item">
+            <i class="fas fa-clipboard-list item-icon"></i>
+            <div class="item-text">
+              <h3>Account Manager</h3>
+            </div>
+          </a>
+          <a href="solution-executive.html" class="solution-item">
+            <i class="fas fa-pen item-icon"></i>
+            <div class="item-text">
+              <h3>Executive Team</h3>
+            </div>
+          </a>
+          <a href="solution-consultancies.html" class="solution-item">
+            <i class="fas fa-chalkboard-user item-icon"></i>
+            <div class="item-text">
+              <h3>AI Consultancies</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+    </ul>
+    <a href="contact.html" class="get-started-btn">Get Started</a>
+  </div>
 
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-            <div class="mobile-menu-panel">
-                <div class="mobile-menu-header">
-                    <img src="img/CODIM logo web.webp" alt="CodimAi Logo" class="mobile-logo">
-                    <button class="mobile-menu-close" aria-label="Close menu">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <nav class="mobile-menu-nav">
-                    <ul class="mobile-nav-links">
-                        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-                        <li class="mobile-nav-item mobile-dropdown">
-                            <a href="#" class="mobile-nav-link dropdown-toggle">Product</a>
-                            <ul class="mobile-dropdown-menu">
-                                <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
-                                <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
-                                <li><a href="product-hubspot.html" class="mobile-dropdown-link">HubSpot</a></li>
-                                <li><a href="product-zendesk.html" class="mobile-dropdown-link">Zendesk</a></li>
-                                <li><a href="product-discord.html" class="mobile-dropdown-link">Discord</a></li>
-                                <li><a href="contact.html" class="mobile-dropdown-link">Integrations</a></li>
-                            </ul>
-                        </li>
-                        <li class="mobile-nav-item mobile-dropdown">
-                            <a href="#" class="mobile-nav-link dropdown-toggle">Solutions</a>
-                            <ul class="mobile-dropdown-menu">
-                                <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
-                                <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
-                                <li><a href="solution-marketing.html" class="mobile-dropdown-link">Marketing Team</a></li>
-                                <li><a href="solution-people.html" class="mobile-dropdown-link">HR Team</a></li>
-                                <li><a href="solution-finance.html" class="mobile-dropdown-link">Finance Team</a></li>
-                                <li><a href="solution-account.html" class="mobile-dropdown-link">Account Manager</a></li>
-                                <li><a href="solution-executive.html" class="mobile-dropdown-link">Executive Team</a></li>
-                                <li><a href="solution-consultancies.html" class="mobile-dropdown-link">AI Consultancies</a></li>
-                            </ul>
-                        </li>
-                        <li class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
-                    </ul>
-                    <div class="mobile-menu-footer">
-                        <a href="contact.html" class="mobile-get-started-btn">Get Started</a>
-                    </div>
-                </nav>
-            </div>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <img src="img/CODIM logo web.webp" alt="CodimAi Logo" class="mobile-logo">
+        <button class="mobile-menu-close" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <nav class="mobile-menu-nav">
+        <ul class="mobile-nav-links">
+          <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li class="mobile-nav-item mobile-dropdown">
+            <a href="#" class="mobile-nav-link dropdown-toggle">Product <i class="fas fa-chevron-down"></i></a>
+            <ul class="mobile-dropdown-menu">
+              <li><a href="product-slack.html" class="mobile-dropdown-link">Slack</a></li>
+              <li><a href="product-teams.html" class="mobile-dropdown-link">Microsoft Teams</a></li>
+              <li><a href="product-hubspot.html" class="mobile-dropdown-link">HubSpot</a></li>
+              <li><a href="product-zendesk.html" class="mobile-dropdown-link">Zendesk</a></li>
+              <li><a href="product-discord.html" class="mobile-dropdown-link">Discord</a></li>
+              <li><a href="integration.html" class="mobile-dropdown-link">Integrations</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav-item mobile-dropdown">
+            <a href="#" class="mobile-nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+            <ul class="mobile-dropdown-menu">
+              <li><a href="solution-support.html" class="mobile-dropdown-link">Support Team</a></li>
+              <li><a href="solution-sales.html" class="mobile-dropdown-link">Sales Team</a></li>
+              <li><a href="solution-marketing.html" class="mobile-dropdown-link">Marketing Team</a></li>
+              <li><a href="solution-people.html" class="mobile-dropdown-link">HR Team</a></li>
+              <li><a href="solution-finance.html" class="mobile-dropdown-link">Finance Team</a></li>
+              <li><a href="solution-account.html" class="mobile-dropdown-link">Account Manager</a></li>
+              <li><a href="solution-executive.html" class="mobile-dropdown-link">Executive Team</a></li>
+              <li><a href="solution-consultancies.html" class="mobile-dropdown-link">AI Consultancies</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav-item"><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="contact.html" class="mobile-get-started-btn">Get Started</a>
         </div>
-    </nav>
+      </nav>
+    </div>
+  </div>
+</nav>
         <!-- Navbar End -->
 
     <!-- Hero Section Start -->
-    <section class="hero-people">
+    <section class="hero-slack">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-12">
-                    <h1 class="hero-heading">Empower Your <span class="text-info">HR Team</span> with AI-Driven HR Solutions</h1>
+                <h1 class="hero-heading">Empower Your <span class="text-orange-accent">HR Team</span> with AI-Driven HR Solutions</h1>
                     <p class="hero-subheading">Transform recruitment, onboarding, employee support, and performance tracking with intelligent AI agents that integrate seamlessly with Workday, BambooHR, and ADP!</p>
                 </div>
             </div>
         </div>
         
-        <div class="bs-btn-logo mb-4">
+       <div class="bs-btn-logo mb-4">
             <!-- Row 1 Icons -->
             <div class="btn-design typ-logo" title="Google Drive"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 78"><path fill="#0066da" d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3L27.5 53H0c0 1.55.4 3.1 1.2 4.5z"></path><path fill="#00ac47" d="M43.65 25 29.9 1.2c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44A9.06 9.06 0 0 0 0 53h27.5z"></path><path fill="#ea4335" d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75L86.1 57.5c.8-1.4 1.2-2.95 1.2-4.5H59.798l5.852 11.5z"></path><path fill="#00832d" d="M43.65 25 57.4 1.2C56.05.4 54.5 0 52.9 0H34.4c-1.6 0-3.15.45-4.5 1.2z"></path><path fill="#2684fc" d="M59.8 53H27.5L13.75 76.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z"></path><path fill="#ffba00" d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65 25 59.8 53h27.45c0-1.55-.4-3.1-1.2-4.5z"></path></svg></div>
             <div class="btn-design typ-logo" title="Asana"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><path fill="#de3c67" fill-rule="evenodd" d="M61.35.227 6.017 4.314C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257-3.89c5.433-.387 6.99-2.917 6.99-7.193V20.64c0-2.21-.873-2.847-3.443-4.733L74.167 3.143C69.894.036 68.147-.357 61.35.226zM25.92 19.523c-5.247.353-6.437.433-9.417-1.99l-7.576-6.026c-.77-.78-.383-1.753 1.557-1.947l53.193-3.887c4.467-.39 6.793 1.167 8.54 2.527l9.123 6.61c.39.197 1.36 1.36.193 1.36L26.6 19.477l-.68.047zM19.803 88.3V30.367c0-2.53.777-3.697 3.103-3.893L86 22.78c2.14-.193 3.107 1.167 3.107 3.693V84.02c0 2.53-.39 4.67-3.883 4.863l-60.377 3.5c-3.493.193-5.043-.97-5.043-4.083zm59.6-54.827c.387 1.75 0 3.5-1.75 3.7l-2.91.577v42.773c-2.527 1.36-4.853 2.137-6.797 2.137-3.107 0-3.883-.973-6.21-3.887l-19.03-29.94V77.8l6.02 1.363s0 3.5-4.857 3.5l-13.39.777c-.39-.78 0-2.723 1.357-3.11l3.497-.97v-38.3l-4.853-.393c-.39-1.75.58-4.277 3.3-4.473l14.367-.967 19.8 30.327v-26.83l-5.047-.58c-.39-2.143 1.163-3.7 3.103-3.89l13.4-.78z" clip-rule="evenodd"></path></svg></div>
@@ -531,450 +327,384 @@
 
         </div>
 
+
         <!-- CTA Buttons -->
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center hero-cta-buttons">
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3">
-                        </i>Book a demo
+                        Book a Demo
                     </a>
-                    <a href="solution-all.html" class="btn btn-outline-light btn-lg px-5 py-3">
-                        </i>Explore all solutions
-                    </a>
+                    
                 </div>
             </div>
         </div>
     </section>
     <!-- Hero Section End -->
 
-    <!-- Key Benefits -->
-    <div class="container-xxl py-5" id="benefits">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-info text-uppercase mb-3">HR Impact</h6>
-                <h1 class="mb-4">Transform Your People Operations</h1>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="text-center p-4 bg-light rounded h-100">
-                        <div class="bg-info circle-badge-80 mb-4">
-                            <i class="fas fa-clock fa-2x text-white"></i>
-                        </div>
-                        <h4 class="mb-3">70% Faster</h4>
-                        <p class="mb-0">Recruitment Process</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="text-center p-4 bg-light rounded h-100">
-                        <div class="bg-success circle-badge-80 mb-4">
-                            <i class="fas fa-user-plus fa-2x text-white"></i>
-                        </div>
-                        <h4 class="mb-3">95%</h4>
-                        <p class="mb-0">Onboarding Satisfaction</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="text-center p-4 bg-light rounded h-100">
-                        <div class="bg-warning circle-badge-80 mb-4">
-                            <i class="fas fa-comments fa-2x text-white"></i>
-                        </div>
-                        <h4 class="mb-3">10x More</h4>
-                        <p class="mb-0">Employee Queries Handled</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="text-center p-4 bg-light rounded h-100">
-                        <div class="bg-primary circle-badge-80 mb-4">
-                            <i class="fas fa-smile fa-2x text-white"></i>
-                        </div>
-                        <h4 class="mb-3">85%</h4>
-                        <p class="mb-0">Employee Engagement</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Key Benefits Section -->
+<section class="benefits-section">
+  <div class="benefits-container">
+    <!-- Header -->
+    <div class="section-header">
+      <span class="section-badge">HR Impact</span>
+      <h1 class="section-title">Transform Your People Operations</h1>
     </div>
 
-    <!-- Features -->
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-info text-uppercase mb-3">Capabilities</h6>
-                <h1 class="mb-4">Complete HR Automation Suite</h1>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-user-check fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Recruitment AI</h5>
-                        <p class="mb-0">Automate candidate screening, schedule interviews, and rank applicants using AI-powered resume analysis and skill matching algorithms.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-clipboard-list fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Smart Onboarding</h5>
-                        <p class="mb-0">Create personalized onboarding journeys with automated task assignments, document collection, and progress tracking for new hires.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-headset fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Employee Support</h5>
-                        <p class="mb-0">24/7 AI chatbot answers HR policy questions, benefits inquiries, and handles routine requests without human intervention.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-chart-line fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Performance Tracking</h5>
-                        <p class="mb-0">Monitor employee performance with AI-driven analytics, goal tracking, and automated review scheduling with intelligent insights.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-graduation-cap fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Learning & Development</h5>
-                        <p class="mb-0">AI recommends personalized training programs and tracks skill development based on role requirements and career goals.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
-                    <div class="service-item bg-white h-100 p-4">
-                        <div class="service-icon mb-4">
-                            <i class="fas fa-calendar-check fa-3x text-info"></i>
-                        </div>
-                        <h5 class="mb-3">Leave Management</h5>
-                        <p class="mb-0">Automate leave requests, approvals, and balance tracking while ensuring compliance with company policies and labor laws.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Benefits Grid -->
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="card-icon">
+          <i class="fas fa-clock"></i>
         </div>
-    </div>
-
-    <!-- Use Case -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-info text-uppercase mb-3">Success Story</h6>
-                <h1 class="mb-4">How TechCorp Scaled HR Operations</h1>
-            </div>
-
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <div class="bg-danger text-white rounded p-5">
-                        <h3 class="text-white mb-4">The Challenge</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-times-circle me-2"></i>Recruiting 200+ positions annually manually</li>
-                            <li class="mb-3"><i class="fas fa-times-circle me-2"></i>3-week onboarding process overwhelming HR team</li>
-                            <li class="mb-3"><i class="fas fa-times-circle me-2"></i>5000+ employee queries monthly</li>
-                            <li class="mb-0"><i class="fas fa-times-circle me-2"></i>Performance reviews taking 2 months</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                    <div class="bg-success text-white rounded p-5">
-                        <h3 class="text-white mb-4">The Results (6 months)</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-check-circle me-2"></i>70% faster candidate screening</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2"></i>Onboarding reduced to 3 days</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2"></i>80% of queries handled by AI</li>
-                            <li class="mb-0"><i class="fas fa-check-circle me-2"></i>Reviews completed in 2 weeks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <blockquote class="blockquote">
-                    <p class="mb-4 fs-5 fst-italic">"CodimAi transformed our HR operations. We're now able to focus on strategic initiatives while AI handles routine tasks efficiently."</p>
-                    <footer class="blockquote-footer text-dark">Rachel Thompson, Chief People Officer at TechCorp</footer>
-                </blockquote>
-            </div>
-        </div>
-    </div>
-
-    <!-- Integration Section -->
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-info text-uppercase mb-3">Integrations</h6>
-                <h1 class="mb-4">Connects With Your HR Stack</h1>
-                <p class="lead">Seamlessly integrate with your existing HRIS and recruitment tools</p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="bg-white rounded p-4 h-100">
-                        <img src="https://cdn.simpleicons.org/greenhouse/04A764" alt="Greenhouse" class="img-placeholder-60">
-                        <p class="mt-3 mb-0">Greenhouse</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="bg-white rounded p-4 h-100">
-                        <img src="https://cdn.brandfetch.io/idJFz6sAsl/w/400/h/400/theme/dark/icon.webp?c=1bxid64Mup7aczewSAYMX&t=1748592533197" alt="LinkedIn" class="img-placeholder-60">
-                        <p class="mt-3 mb-0">LinkedIn</p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-white rounded p-4 h-100">
-                        <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="img-placeholder-60">
-                        <p class="mt-3 mb-0">Slack</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- How It Works -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <h2 class="mb-4">How AI Transforms Your HR</h2>
-                    <p class="lead mb-4">Three simple steps: Connect your HRIS, configure AI workflows, and let automation handle routine HR tasks.</p>
-                    
-                    <div class="bg-white rounded shadow-sm p-5 text-center">
-                        <i class="fas fa-image fa-5x text-muted mb-3"></i>
-                        <p class="text-muted mb-0">HR Dashboard Demo<br><small>Interface screenshot will be added here</small></p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                    <div class="ps-lg-4">
-                        <div class="d-flex align-items-start mb-4">
-                            <div class="flex-shrink-0">
-                                <div class="bg-info text-white circle-badge-50">
-                                    <span class="fw-bold">1</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <h5 class="mb-2">Connect HR Systems</h5>
-                                <p class="text-muted mb-0">Link your HRIS, ATS, payroll, and communication platforms for unified employee data access.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-start mb-4">
-                            <div class="flex-shrink-0">
-                                <div class="bg-info text-white circle-badge-50">
-                                    <span class="fw-bold">2</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <h5 class="mb-2">Configure AI Workflows</h5>
-                                <p class="text-muted mb-0">Set up automated recruiting pipelines, onboarding sequences, and employee support chatbots.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-start">
-                            <div class="flex-shrink-0">
-                                <div class="bg-info text-white circle-badge-50">
-                                    <span class="fw-bold">3</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <h5 class="mb-2">Monitor & Optimize</h5>
-                                <p class="text-muted mb-0">Track HR metrics in real-time and receive AI recommendations for process improvements.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="container-xxl py-5 bg-info">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 wow fadeInLeft" data-wow-delay="0.1s">
-                    <h2 class="text-white mb-3"><i class="fas fa-rocket me-3"></i>Ready to Transform HR Operations?</h2>
-                    <p class="text-white mb-0 lead">Join hundreds of HR teams using CodimAi to automate recruitment, onboarding, and employee support.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end wow fadeInRight" data-wow-delay="0.3s">
-                    <a href="contact.html" class="btn btn-dark btn-lg py-3 px-5">
-                        <i class="fas fa-calendar-alt me-2"></i>Book Demo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ Section Start -->
-<div class="container-fluid py-5 faq-section">
-    <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-danger">FAQ</h5>
-            <h1 class="mb-3">Frequently Asked Questions</h1>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="accordion" id="faqAccordion">
-
-                    <!-- FAQ Item 1 -->
-                    <div class="accordion-item wow fadeIn" data-wow-delay="0.1s">
-                        <h2 class="accordion-header" id="heading1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                How does the People Team ensure strong collaboration between technical and business units?
-                            </button>
-                        </h2>
-                        <div id="collapse1" class="accordion-collapse collapse show" 
-                             aria-labelledby="heading1" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                By implementing AI-driven communication tools and performance insights, we keep teams aligned on goals and timelines.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="accordion-item wow fadeIn" data-wow-delay="0.30000000000000004s">
-                        <h2 class="accordion-header" id="heading2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                What strategies does CodimAi use to attract and retain top AI talent?
-                            </button>
-                        </h2>
-                        <div id="collapse2" class="accordion-collapse collapse" 
-                             aria-labelledby="heading2" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                We focus on meaningful projects, open culture, and continuous learning — attracting passionate professionals who drive innovation.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- FAQ Section End -->
-
-<!-- FAQ Custom CSS -->
-<style>
-.faq-section {
-    background-color: #f8f9fa;
-}
-
-.accordion-item {
-    border: 1px solid #dee2e6;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-
-.accordion-button {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #212529;
-    background-color: #ffffff;
-    padding: 1.25rem 1.5rem;
-}
-
-.accordion-button:not(.collapsed) {
-    color: #dc3545;
-    background-color: #fff5f5;
-    box-shadow: none;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-    border-color: #dee2e6;
-}
-
-.accordion-button::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23dc3545'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-.accordion-body {
-    padding: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #6c757d;
-}
-</style>
-
-    <!-- Footer -->
-      <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-    <div class="container pt-5 pb-4">
-      <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
-          <a href="index.html">
-            <img src="img/short logo.webp" alt="CodimAI Logo" class="footer-logo">
-          </a>
-          <p class="mt-4 text-light">Everything About Ai</p>
-          <div class="d-flex hightech-link">
-            <a href="https://www.facebook.com/profile.php?id=61578209616406" target="_blank" rel="noopener noreferrer" title="Visit our Facebook page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-facebook-f text-primary"></i></a>
-            <a href="https://twitter.com/codimai" target="_blank" rel="noopener noreferrer" title="Visit our Twitter page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-twitter text-primary"></i></a>
-            <a href="https://www.instagram.com/codim.ai/" target="_blank" rel="noopener noreferrer" title="Visit our Instagram page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
-                class="fab fa-instagram text-primary"></i></a>
-            <a href="https://www.linkedin.com/in/shivam-gupta-089518308/" target="_blank" rel="noopener noreferrer" title="Visit our LinkedIn page"
-              class="btn-light nav-fill btn btn-square rounded-circle me-0"><i
-                class="fab fa-linkedin-in text-primary"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <h3 class="text-danger">Short Link</h3>
-                    <div class="mt-4 d-flex flex-column short-link">
-                        <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Contact
-                            us</a>
-                        <a href="solution-all.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Our
-                            Services</a>
-                        <a href="blog.html" class="mb-2 text-white"><i class="fas fa-angle-right text-danger me-2"></i>Blog</a>
-                    </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <h3 class="text-danger">Contact Us</h3>
-          <div class="text-white mt-4 d-flex flex-column contact-link">
-            <a href="#" class="pb-3 text-light border-bottom border-primary"><i
-                class="fas fa-map-marker-alt text-danger me-2"></i>Mumbai,India</a>
-            <a href="tel:+918369693412" class="py-3 text-light border-bottom border-primary"><i
-                class="fas fa-phone-alt text-danger me-2"></i>+91 83696 93412</a>
-            <a href="mailto:Support@codimai.com" class="py-3 text-light border-bottom border-primary"><i
-                class="fas fa-envelope text-danger me-2"></i>Support@codimai.com</a>
-          </div>
-        </div>
+        <h4>70% Faster</h4>
+        <p>Recruitment Process</p>
       </div>
-      <hr class="text-light mt-5 mb-4">
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start">
-          <span class="text-light"><a href="#" class="text-danger"><i
-                class="fas fa-copyright text-danger me-2"></i>codimai</a>, All right reserved.</span>
+
+      <div class="benefit-card">
+        <div class="card-icon">
+          <i class="fas fa-user-plus"></i>
         </div>
-        <div class="col-md-6 text-center text-md-end">
+        <h4>95%</h4>
+        <p>Onboarding Satisfaction</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="card-icon">
+          <i class="fas fa-comments"></i>
         </div>
+        <h4>10x More</h4>
+        <p>Employee Queries Handled</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="card-icon">
+          <i class="fas fa-smile"></i>
+        </div>
+        <h4>85%</h4>
+        <p>Employee Engagement</p>
       </div>
     </div>
   </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="features-container">
+    <!-- Header -->
+    <div class="section-header">
+      <span class="section-badge">Capabilities</span>
+      <h1 class="section-title">Complete HR Automation Suite</h1>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <h3>Recruitment AI</h3>
+        <p>Automate candidate screening, schedule interviews, and rank applicants using AI-powered resume analysis and skill matching algorithms.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-clipboard-list"></i>
+        </div>
+        <h3>Smart Onboarding</h3>
+        <p>Create personalized onboarding journeys with automated task assignments, document collection, and progress tracking for new hires.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>Employee Support</h3>
+        <p>24/7 AI chatbot answers HR policy questions, benefits inquiries, and handles routine requests without human intervention.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Performance Tracking</h3>
+        <p>Monitor employee performance with AI-driven analytics, goal tracking, and automated review scheduling with intelligent insights.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Learning & Development</h3>
+        <p>AI recommends personalized training programs and tracks skill development based on role requirements and career goals.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <h3>Leave Management</h3>
+        <p>Automate leave requests, approvals, and balance tracking while ensuring compliance with company policies and labor laws.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Case Section -->
+<section class="use-case-section">
+  <div class="use-case-container">
+    <!-- Header -->
+    <div class="section-header">
+      <span class="section-badge">Success Story</span>
+      <h1 class="section-title">How TechCorp Scaled HR Operations</h1>
+    </div>
+
+    <!-- Challenge & Results Grid -->
+    <div class="story-grid">
+      <div class="story-card challenge-card">
+        <h3>The Challenge</h3>
+        <ul class="story-list">
+          <li><i class="fas fa-times-circle"></i>Recruiting 200+ positions annually manually</li>
+          <li><i class="fas fa-times-circle"></i>3-week onboarding process overwhelming HR team</li>
+          <li><i class="fas fa-times-circle"></i>5000+ employee queries monthly</li>
+          <li><i class="fas fa-times-circle"></i>Performance reviews taking 2 months</li>
+        </ul>
+      </div>
+
+      <div class="story-card results-card">
+        <h3>The Results (6 months)</h3>
+        <ul class="story-list">
+          <li><i class="fas fa-check-circle"></i>70% faster candidate screening</li>
+          <li><i class="fas fa-check-circle"></i>Onboarding reduced to 3 days</li>
+          <li><i class="fas fa-check-circle"></i>80% of queries handled by AI</li>
+          <li><i class="fas fa-check-circle"></i>Reviews completed in 2 weeks</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote-wrapper">
+      <blockquote class="quote">
+        <p>"CodimAi transformed our HR operations. We're now able to focus on strategic initiatives while AI handles routine tasks efficiently."</p>
+        <footer class="quote-author">Rachel Thompson, Chief People Officer at TechCorp</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Integration Section -->
+<section class="integration-section">
+  <div class="integration-container">
+    <!-- Header -->
+    <div class="section-header">
+      <span class="section-badge">Integrations</span>
+      <h1 class="section-title">Connects With Your HR Stack</h1>
+      <p class="section-subtitle">Seamlessly integrate with your existing HRIS and recruitment tools</p>
+    </div>
+
+    <!-- Icons Grid -->
+    <div class="icons-grid">
+      <div class="icon-card">
+        <img src="https://cdn.simpleicons.org/greenhouse/04A764" alt="Greenhouse" class="icon-img">
+        <p>Greenhouse</p>
+      </div>
+      <div class="icon-card">
+        <img src="https://cdn.brandfetch.io/idJFz6sAsl/w/400/h/400/theme/dark/icon.webp?c=1bxid64Mup7aczewSAYMX&t=1748592533197" alt="LinkedIn" class="icon-img">
+        <p>LinkedIn</p>
+      </div>
+      <div class="icon-card">
+        <img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" class="icon-img">
+        <p>Slack</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works-section">
+  <div class="how-it-works-container">
+      <!-- Header & Placeholder -->
+    <div class="section-header">
+      <h2 class="section-title">How AI Transforms Your HR</h2>
+      <p class="section-subtitle">Three simple steps: Connect your HRIS, configure AI workflows, and let automation handle routine HR tasks.</p>
+    </div>
+    <!-- Steps Grid -->
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h5>Connect HR Systems</h5>
+          <p>Link your HRIS, ATS, payroll, and communication platforms for unified employee data access.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h5>Configure AI Workflows</h5>
+          <p>Set up automated recruiting pipelines, onboarding sequences, and employee support chatbots.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h5>Monitor & Optimize</h5>
+          <p>Track HR metrics in real-time and receive AI recommendations for process improvements.</p>
+        </div>
+      </div>
+    </div>
+
   
-    <a href="#" title="Back to top" class="btn btn-danger btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+    <!-- Placeholder for Image/Video -->
+    <div class="video-placeholder">
+      <i class="fas fa-image"></i>
+      <p>HR Dashboard Demo</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-container">
+    <div class="row-wrapper">
+      <div class="cta-text">
+        <h2 class="cta-title">Ready to Transform HR Operations?</h2>
+        <p class="cta-subtitle">Join hundreds of HR teams using CodimAi to automate recruitment, onboarding, and employee support.</p>
+      </div>
+      <div class="cta-button">
+        <a href="contact.html" class="cta-btn">
+          <i class="fas fa-calendar-alt"></i> Book Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- FAQ Section Start -->
+<section class="faq-section">
+  <div class="faq-container">
+    <!-- Header -->
+    <div class="faq-header">
+      <span class="section-badge">FAQ</span>
+      <h1 class="faq-title">
+        Got Questions?<br>
+        <span class="gradient-fire">We’ve Got Answers</span>
+      </h1>
+    </div>
+
+    <!-- Premium Accordion -->
+    <div class="faq-accordion">
+      <!-- FAQ 1 -->
+      <div class="faq-item active">
+        <div class="faq-question">
+          <h3> How does the People Team ensure strong collaboration between technical and business units?</h3>
+          <span class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </div>
+        <div class="faq-answer">
+          <p>
+              By implementing AI-driven communication tools and performance insights, we keep teams aligned on goals and timelines.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What strategies does CodimAi use to attract and retain top AI talent?</h3>
+          <span class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </div>
+        <div class="faq-answer">
+          <p>
+ We focus on meaningful projects, open culture, and continuous learning — attracting passionate professionals who drive innovation.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- FAQ Section End -->
+
+    <!-- Footer Start -->
+   <footer class="footer-section">
+  <div class="footer-container">
+    <!-- Main Footer -->
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <img src="img/short logo.webp" alt="CodimAI Logo" class="footer-logo">
+        </a>
+        <p class="brand-tagline">Everything About AI</p>
+        
+        <!-- Social Icons -->
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/codimai" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/codim.ai" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="solution-all.html">Our Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h3 class="footer-heading">Get In Touch</h3>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Mumbai, India</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+918369693412">+91 83696 93412</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:Support@codimai.com">Support@codimai.com</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="bottom-grid">
+        <p>
+          © 2025 <span class="highlight-red">CodimAI</span> — All Rights Reserved
+        </p>
+        <p class="made-with">Made with <span class="heart">love</span> in India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Red Glow -->
+  <div class="footer-glow"></div>
+</footer>
+    <!-- Footer End -->
+     <script src="./js/faq.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

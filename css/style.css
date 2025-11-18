@@ -861,6 +861,7 @@ img {
 .hero-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 30px rgba(255,0,0,0.45);
+  color: white;
 }
 .super-agent-gradient {
   background: linear-gradient(135deg, #ff1744, #f44336, #ff5252);
@@ -868,7 +869,9 @@ img {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+.text-orange-accent{
+  color: orangered;
+}
 .super-agent-glow {
   text-shadow: 0 0 25px rgba(255, 82, 82, 0.6);
 }
@@ -1410,91 +1413,69 @@ img {
     padding: 1rem 0;
   }
 }
-/* ======================================
-   FULL SCREEN SPINNER – HERO THEME
-====================================== */
-.themed-spinner-overlay {
+/* LOADING SPINNER – CodimAI 2025 Dark + Red Cosmic Theme */
+.loading-overlay {
   position: fixed;
   inset: 0;
-  background: #0a0a12;
+  background: rgba(10, 10, 18, 0.95);
+  backdrop-filter: blur(8px);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 999999;
-  overflow: hidden;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-/* Animated Background (same as hero theme) */
-.themed-spinner-bg {
-  position: absolute;
-  inset: 0;
+.loading-overlay.hidden {
+  opacity: 0;
   pointer-events: none;
 }
 
-/* Floating Orbs */
-.spinner-orbs .spinner-orb {
+.spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.spinner-circle {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(244, 67, 54, 0.2);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(244,67,54,0.25), transparent 70%);
-  filter: blur(90px);
-  animation: drift 25s infinite ease-in-out;
+  border-top-color: var(--primary-red);
+  animation: spin 1s linear infinite;
 }
 
-.spinner-orb.orb-1 {
-  width: 600px;
-  height: 600px;
-  top: -10%;
-  left: -10%;
-}
-.spinner-orb.orb-2 {
-  width: 800px;
-  height: 800px;
-  bottom: -15%;
-  right: -20%;
-  background: radial-gradient(circle, rgba(255,51,102,0.22), transparent 70%);
-  animation-delay: 8s;
-}
-.spinner-orb.orb-3 {
-  width: 500px;
-  height: 500px;
-  top: 40%;
-  left: 45%;
-  animation-delay: 15s;
+.spinner-circle:nth-child(2) {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-width: 2px;
+  animation-delay: -0.4s;
 }
 
-/* Grid Overlay */
-.spinner-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(244,67,54,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244,67,54,0.07) 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: gridShift 60s linear infinite;
-}
-
-@keyframes gridShift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(80px, 80px); }
-}
-
-/* ======================================
-   SPINNER ICON (Neon Red)
-====================================== */
-.themed-spinner {
-  width: 80px;
-  height: 80px;
-  border: 6px solid rgba(255, 255, 255, 0.08);
-  border-top-color: #ff2a3f;
-  border-radius: 50%;
-  animation: spin 1.1s linear infinite;
-  z-index: 10;
-  filter: drop-shadow(0 0 18px rgba(255, 40, 60, 0.7));
+.spinner-circle:nth-child(3) {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  border-width: 1px;
+  animation-delay: -0.8s;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .spinner {
+    width: 50px;
+    height: 50px;
   }
 }
 .hero-slack {
@@ -1611,3 +1592,4 @@ img {
                 height: 24px;
             }
         }
+        

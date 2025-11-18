@@ -1,0 +1,746 @@
+/* INTEGRATIONS SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.integrations-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.integrations-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.integrations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Icons Grid */
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.icon-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+  width: 100%;
+  max-width: 250px;
+}
+
+.icon-card:nth-child(1) { animation-delay: 0.1s; }
+.icon-card:nth-child(2) { animation-delay: 0.3s; }
+.icon-card:nth-child(3) { animation-delay: 0.5s; }
+.icon-card:nth-child(4) { animation-delay: 0.7s; }
+
+.icon-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.icon-img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  filter: brightness(1.2);
+  transition: transform 0.3s;
+}
+
+.icon-card:hover .icon-img {
+  transform: scale(1.1);
+}
+
+.icon-card p {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .icons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .icon-card {
+    max-width: none;
+  }
+}
+
+/* SUCCESS STORY SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.success-story-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.success-story-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.success-story-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Story Grid */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.story-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.challenge-card {
+  border-left: 4px solid var(--primary-red);
+  animation-delay: 0.1s;
+}
+
+.results-card {
+  border-left: 4px solid #4CAF50;
+  animation-delay: 0.3s;
+}
+
+.story-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.story-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.story-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--gray-medium);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.story-list i {
+  font-size: 1rem;
+  min-width: 20px;
+}
+
+.challenge-card .story-list i {
+  color: var(--primary-red);
+}
+
+.results-card .story-list i {
+  color: #4CAF50;
+}
+
+/* Quote */
+.quote-wrapper {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--primary-red);
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+}
+
+.quote::after {
+  content: '"';
+  font-size: 4rem;
+  color: var(--primary-red);
+  position: absolute;
+  right: -1rem;
+  bottom: -0.5rem;
+}
+
+.quote-author {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  font-weight: 600;
+  margin-top: 1rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .quote::before, .quote::after {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .success-story-section {
+    padding: 6rem 0;
+  }
+  .story-card {
+    padding: 2rem;
+  }
+  .quote {
+    font-size: 1.2rem;
+  }
+}
+/* CAPABILITIES SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.capabilities-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.capabilities-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.capabilities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.capability-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.capability-card:nth-child(1) { animation-delay: 0.1s; }
+.capability-card:nth-child(2) { animation-delay: 0.3s; }
+.capability-card:nth-child(3) { animation-delay: 0.5s; }
+.capability-card:nth-child(4) { animation-delay: 0.7s; }
+.capability-card:nth-child(5) { animation-delay: 0.9s; }
+.capability-card:nth-child(6) { animation-delay: 1.1s; }
+
+.capability-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.capability-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.capability-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.capability-card p {
+  color: var(--gray-medium);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-section {
+    padding: 6rem 0;
+  }
+}
+/* BENEFITS SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.benefits-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.benefit-card:nth-child(1) { animation-delay: 0.1s; }
+.benefit-card:nth-child(2) { animation-delay: 0.3s; }
+.benefit-card:nth-child(3) { animation-delay: 0.5s; }
+.benefit-card:nth-child(4) { animation-delay: 0.7s; }
+
+.benefit-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.benefit-card h4 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: white;
+  line-height: 1;
+}
+
+.benefit-card p {
+  font-size: 1.1rem;
+  color: var(--gray-medium);
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 6rem 0;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* TEAMS OVERVIEW SECTION – CodimAI 2025 Dark + Red Cosmic Theme */
+.teams-section {
+  padding: 8rem 0;
+  background: var(--gradient-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.teams-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--glow-red) 0%, transparent 60%);
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Container */
+.teams-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.section-badge {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray-medium);
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Teams Grid */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244,67,54,0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.team-card:nth-child(1) { animation-delay: 0.1s; }
+.team-card:nth-child(2) { animation-delay: 0.2s; }
+.team-card:nth-child(3) { animation-delay: 0.3s; }
+.team-card:nth-child(4) { animation-delay: 0.4s; }
+.team-card:nth-child(5) { animation-delay: 0.5s; }
+.team-card:nth-child(6) { animation-delay: 0.6s; }
+.team-card:nth-child(7) { animation-delay: 0.7s; }
+.team-card:nth-child(8) { animation-delay: 0.8s; }
+
+.team-card:hover {
+  border-color: var(--primary-red);
+  box-shadow: 0 20px 40px rgba(244,67,54,0.2);
+  transform: translateY(-8px);
+}
+
+.team-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.team-card:hover .team-icon {
+  transform: scale(1.1);
+}
+
+.team-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.team-card p {
+  color: var(--gray-medium);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-medium);
+  margin-bottom: 0.8rem;
+}
+
+.feature-list i {
+  color: var(--primary-red);
+  font-size: 1rem;
+}
+
+.learn-more-btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.4s;
+  display: inline-block;
+}
+
+.learn-more-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(244,67,54,0.5);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .teams-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-section {
+    padding: 6rem 0;
+  }
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+}
