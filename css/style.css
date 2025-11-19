@@ -788,11 +788,12 @@ img {
     linear-gradient(rgba(244,67,54,0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(244,67,54,0.08) 1px, transparent 1px);
   background-size: 80px 80px;
-  animation: gridShift 60s linear infinite;
+  animation: gridShift 6s linear infinite;
 }
 
 @keyframes gridShift {
-  0%   { transform: translate(0, 0); }
+  0%   { transform: translate(0, 0);
+   }
   100% { transform: translate(80px, 80px); }
 }
 
@@ -1502,6 +1503,7 @@ img {
             line-height: 1.2;
             color: #ffffff;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
         .hero-slack .hero-subheading {
             font-size: clamp(1rem, 2.5vw, 1.25rem);
@@ -1510,6 +1512,7 @@ img {
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-align: justify;
         }
         .bs-btn-logo {
             display: flex;
